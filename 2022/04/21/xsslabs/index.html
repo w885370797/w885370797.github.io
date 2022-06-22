@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="level1       第一关相对来说简单，看到上面有个name&#x3D;。所以我们把后面改成语句测试。成功                      Level2       第二关，我们直接在输入框输入后行不通。右键看一下网页代码 我们会发现，我们输入的标点变成了 实体码，他这里是用了一个函数。我没只需要把这个函数闭合掉就行了 闭合的方式从这里找 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xsslabs">
+<meta property="og:url" content="http://example.com/2022/04/21/xsslabs/index.html">
+<meta property="og:site_name" content="懒大王的主场">
+<meta property="og:description" content="level1       第一关相对来说简单，看到上面有个name&#x3D;。所以我们把后面改成语句测试。成功                      Level2       第二关，我们直接在输入框输入后行不通。右键看一下网页代码 我们会发现，我们输入的标点变成了 实体码，他这里是用了一个函数。我没只需要把这个函数闭合掉就行了 闭合的方式从这里找 1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008gHraJly8h1hm34j15tj30nu0hogme.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h1hm4h7kxyj30ov0dvgno.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h1hm8u4v1nj30t00gy0tw.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h1hmgg44a1j30m30fsab8.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h1hmjsfzpnj30ni0he3zq.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008gHraJly8h1hmnh748cj30pn0hb0u5.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h1hmpkj0eoj30ny0h0ta7.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h1hmrtdqglj30n60h43zm.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h1hmzgqp2fj30py0hsjsp.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h1hn6ucekwj30pp0ha0u0.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h1hn9g2n9vj30ak02lt8p.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h1hnehkorkj30sc0g50vg.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008gHraJly8h1ho8ag9pej30z20h4wgl.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/bmiddle/008gHraJly8h1ho9rku49j30rq0f8ac4.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008gHraJly8h1hoe64h4qj30ru0gcq57.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h1hpfgdcaej30rh0hyjtz.jpg">
+<meta property="article:published_time" content="2022-04-21T12:21:55.000Z">
+<meta property="article:modified_time" content="2022-06-20T16:12:09.765Z">
+<meta property="article:author" content="Sanyer">
+<meta property="article:tag" content="XSS-LABS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva4.sinaimg.cn/large/008gHraJly8h1hm34j15tj30nu0hogme.jpg"><title>xsslabs | 懒大王的主场</title><link ref="canonical" href="http://example.com/2022/04/21/xsslabs/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">懒大王的主场</div><div class="header-banner-info__subtitle">懒大王专场，舔羊勿进</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">xsslabs</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-06-21</span></span></div></header><div class="post-body">
+        <h1 id="level1"   >
+          <a href="#level1" class="heading-link"><i class="fas fa-link"></i></a><a href="#level1" class="headerlink" title="level1"></a>level1</h1>
+      <p>第一关相对来说简单，看到上面有个name&#x3D;。所以我们把后面改成语句测试。成功</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h1hm34j15tj30nu0hogme.jpg" alt="img"></p>
+
+        <h1 id="Level2"   >
+          <a href="#Level2" class="heading-link"><i class="fas fa-link"></i></a><a href="#Level2" class="headerlink" title="Level2"></a>Level2</h1>
+      <p>第二关，我们直接在输入框输入后行不通。右键看一下网页代码</p>
+<p>我们会发现，我们输入的标点变成了 实体码，他这里是用了一个函数。我没只需要把这个函数闭合掉就行了</p>
+<p>闭合的方式从这里找</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input name=keyword  value=&quot;&lt;script&gt;alert(&#x27;a&#x27;)&lt;/script&gt;&quot;&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p>他后面比咱输入的多了一个”&gt;很明显了</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hm4h7kxyj30ov0dvgno.jpg" alt="img"></p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hm8u4v1nj30t00gy0tw.jpg" alt="img"></p>
+
+        <h1 id="level3"   >
+          <a href="#level3" class="heading-link"><i class="fas fa-link"></i></a><a href="#level3" class="headerlink" title="level3"></a>level3</h1>
+      <p>这个题就有点离谱了。他没有办法用&gt;去闭合掉那么只能换一个方式。我们用点击弹窗的方式输入</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;onclick=&#x27;alert(&#x27;a&#x27;)</span><br></pre></td></tr></table></div></figure>
+
+<p>这两个单引号都属为了去闭合。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h1hmgg44a1j30m30fsab8.jpg" alt="img"></p>
+
+        <h1 id="level4"   >
+          <a href="#level4" class="heading-link"><i class="fas fa-link"></i></a><a href="#level4" class="headerlink" title="level4"></a>level4</h1>
+      <p>我们直接用onclick来进行测试。毕竟它比较短。不行我们就右键看网页代码。发现他只是换成了双引号进行闭合</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h1hmjsfzpnj30ni0he3zq.jpg" alt="img"></p>
+
+        <h1 id="level5"   >
+          <a href="#level5" class="heading-link"><i class="fas fa-link"></i></a><a href="#level5" class="headerlink" title="level5"></a>level5</h1>
+      <p>我们测试后会发现，on变成了o_n不能用了。想大写绕，绕不过去，那我们再换一个方法，超链接<img src="https://tva3.sinaimg.cn/large/008gHraJly8h1hmnh748cj30pn0hb0u5.jpg" alt="img"></p>
+<p>我们再次拿捏</p>
+
+        <h1 id="level6"   >
+          <a href="#level6" class="heading-link"><i class="fas fa-link"></i></a><a href="#level6" class="headerlink" title="level6"></a>level6</h1>
+      <p>我还是用那个短的测试。发现又把on变了，我们继续尝试大写。成功</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hmpkj0eoj30ny0h0ta7.jpg" alt="img"></p>
+
+        <h1 id="level7"   >
+          <a href="#level7" class="heading-link"><i class="fas fa-link"></i></a><a href="#level7" class="headerlink" title="level7"></a>level7</h1>
+      <p>继续测试、右键。发现on没了。那么我们尝试双写绕过。成功</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hmrtdqglj30n60h43zm.jpg" alt="img"></p>
+
+        <h1 id="level8"   >
+          <a href="#level8" class="heading-link"><i class="fas fa-link"></i></a><a href="#level8" class="headerlink" title="level8"></a>level8</h1>
+      <p>这个是把你写的内容放到下面的连接里。我们直接尝试javascript:alert(1)发现script被处理了。</p>
+<p>我们尝试大写，他会自己变小。那我们通过转码进行绕过。<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://tool.oschina.net/encode" >https://tool.oschina.net/encode</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>转码后直接拿下。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h1hmzgqp2fj30py0hsjsp.jpg" alt="img"></p>
+
+        <h1 id="level9"   >
+          <a href="#level9" class="heading-link"><i class="fas fa-link"></i></a><a href="#level9" class="headerlink" title="level9"></a>level9</h1>
+      <p>根据经验，直接偷鸡，先把上一个的代码偷过来用一下。</p>
+<p>变成了一个非常离谱的东西。右键它告诉我们链接不合法。那我们如果是一个百度的链接呢，他还是不合法。但当把https改成http后合法了。说明它合法与否就是检测有没有http:&#x2F;&#x2F;</p>
+<p>但是当我们输入</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;#106;&amp;#97;&amp;#118;&amp;#97;&amp;#115;&amp;#99;&amp;#114;&amp;#105;&amp;#112;&amp;#116;&amp;#58;&amp;#97;&amp;#108;&amp;#101;&amp;#114;&amp;#116;&amp;#40;&amp;#49;&amp;#41;http://</span><br></pre></td></tr></table></div></figure>
+
+<p>时直接无法跳转。这都是http惹的祸，只要把它注释掉就好了</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h1hn6ucekwj30pp0ha0u0.jpg" alt="img"></p>
+
+        <h1 id="level10"   >
+          <a href="#level10" class="heading-link"><i class="fas fa-link"></i></a><a href="#level10" class="headerlink" title="level10"></a>level10</h1>
+      <p>这个更…</p>
+<p>我们直接看啥都没有。就那一个破地址栏用烂了都没反应</p>
+<p>F12查看一下</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h1hn9g2n9vj30ak02lt8p.jpg" alt="img"></p>
+<p>这里藏仨东西受得了受不了啊</p>
+<p>我们从这三个下手。我的原则就是挑短的。按照132来。第一个没反应。</p>
+<p>那个引号还是用来闭合的。毕竟，如果是内容的话语句就没用了，就是单纯的句子了</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hnehkorkj30sc0g50vg.jpg" alt="img"></p>
+
+        <h1 id="level11"   >
+          <a href="#level11" class="heading-link"><i class="fas fa-link"></i></a><a href="#level11" class="headerlink" title="level11"></a>level11</h1>
+      <p>发现，这个东西他又多了一个ref的隐藏。里面的内容是上一个题的链接。当我们尝试改变他的时候，他就会变成空的。</p>
+<p>我们需要把他抓包，才有可能改变它</p>
+<p>如果刚开始抓能抓到refererr，后来在抓就得自己加。当我们把抓到包里添加referer时，网页上的这个表情终于拿到了参数值。我们只需要把代码放在这里就好了</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">referer:&quot;onclick=&quot;alert(&#x27;a&#x27;)</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h1ho8ag9pej30z20h4wgl.jpg" alt="img"></p>
+
+        <h1 id="level12"   >
+          <a href="#level12" class="heading-link"><i class="fas fa-link"></i></a><a href="#level12" class="headerlink" title="level12"></a>level12</h1>
+      <p>又多了一个，咱吸取经验直接抓包</p>
+<p>抓包后直接改。轻松秒杀</p>
+<p><img src="https://tva2.sinaimg.cn/bmiddle/008gHraJly8h1ho9rku49j30rq0f8ac4.jpg" alt="img"></p>
+
+        <h1 id="level13"   >
+          <a href="#level13" class="heading-link"><i class="fas fa-link"></i></a><a href="#level13" class="headerlink" title="level13"></a>level13</h1>
+      <p>cook盲猜一下肯定是cookie</p>
+<p>我们在cookie后面添加语句</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h1hoe64h4qj30ru0gcq57.jpg" alt="img"></p>
+
+        <h1 id="level14"   >
+          <a href="#level14" class="heading-link"><i class="fas fa-link"></i></a><a href="#level14" class="headerlink" title="level14"></a>level14</h1>
+      
+        <h1 id="level15"   >
+          <a href="#level15" class="heading-link"><i class="fas fa-link"></i></a><a href="#level15" class="headerlink" title="level15"></a>level15</h1>
+      <p>ng-include 和之前文件上传中的include是差不多的</p>
+<p>14和15这俩题都有点毛病<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://158.247.233.5:25024/level15.php?src=1.gif%E6%8C%89%E7%90%86%E8%AF%B4%E4%BB%96%E5%BA%94%E8%AF%A5%E9%95%BF%E6%88%90%E8%BF%99%E6%A0%B7" >http://158.247.233.5:25024/level15.php?src=1.gif按理说他应该长成这样</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>src的值会传到</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;&lt;span class=&quot;ng-include:1.gif&quot;&gt;&lt;/span&gt;&lt;/body&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p> ng-include后面</p>
+<p>直接包含第一关</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?src=&#x27;level1.php?name=&lt;img src=x onerror=alert(1)&gt;&#x27;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hpfgdcaej30rh0hyjtz.jpg" alt="img"></p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/XSS-LABS/">XSS-LABS</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/06/20/%E5%AE%9E%E9%AA%8C%E4%B8%80/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">实验一</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/04/13/upload-labs/"><span class="paginator-prev__text">upload-labs</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#level1"><span class="toc-number">1.</span> <span class="toc-text">
+          level1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Level2"><span class="toc-number">2.</span> <span class="toc-text">
+          Level2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level3"><span class="toc-number">3.</span> <span class="toc-text">
+          level3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level4"><span class="toc-number">4.</span> <span class="toc-text">
+          level4</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level5"><span class="toc-number">5.</span> <span class="toc-text">
+          level5</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level6"><span class="toc-number">6.</span> <span class="toc-text">
+          level6</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level7"><span class="toc-number">7.</span> <span class="toc-text">
+          level7</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level8"><span class="toc-number">8.</span> <span class="toc-text">
+          level8</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level9"><span class="toc-number">9.</span> <span class="toc-text">
+          level9</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level10"><span class="toc-number">10.</span> <span class="toc-text">
+          level10</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level11"><span class="toc-number">11.</span> <span class="toc-text">
+          level11</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level12"><span class="toc-number">12.</span> <span class="toc-text">
+          level12</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level13"><span class="toc-number">13.</span> <span class="toc-text">
+          level13</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level14"><span class="toc-number">14.</span> <span class="toc-text">
+          level14</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#level15"><span class="toc-number">15.</span> <span class="toc-text">
+          level15</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.png" alt="avatar"></div><p class="sidebar-ov-author__text">世间本浑浊，罪与爱同歌</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">35</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Sanyer</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

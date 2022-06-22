@@ -1,0 +1,1015 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="渗透测试       curl file:&#x2F;&#x2F;&#x2F;目录&#x2F;文件 可绕过 可相当于cat使用                     网安法解读                            虚拟机                           虚拟化技术四个阶段">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记">
+<meta property="og:url" content="http://example.com/2022/03/18/%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="懒大王的主场">
+<meta property="og:description" content="渗透测试       curl file:&#x2F;&#x2F;&#x2F;目录&#x2F;文件 可绕过 可相当于cat使用                     网安法解读                            虚拟机                           虚拟化技术四个阶段">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:/桌面/图片/微信图片_20220228190720.png">
+<meta property="og:image" content="d:/桌面/图片/微信图片_20220228190822.png">
+<meta property="og:image" content="d:/桌面/图片/微信图片_20220228190846.png">
+<meta property="og:image" content="d:/桌面/图片/微信图片_20220228190904.png">
+<meta property="og:image" content="d:/桌面/图片/微信图片_20220228190923.png">
+<meta property="og:image" content="c:/Users/88537/AppData/Roaming/Typora/typora-user-images/image-20220228194100507.png">
+<meta property="og:image" content="d:/桌面/图片/微信图片_20220228231600.png">
+<meta property="og:image" content="d:/桌面/图片/微信图片_20220228231713a.png">
+<meta property="og:image" content="d:/桌面/图片/var.png">
+<meta property="og:image" content="d:/桌面/图片/图片1.png">
+<meta property="og:image" content="d:/桌面/图片/图片2.png">
+<meta property="og:image" content="d:/桌面/图片/图片3.png">
+<meta property="og:image" content="d:/桌面/图片/图片4.png">
+<meta property="og:image" content="d:/桌面/图片/图片5.png">
+<meta property="og:image" content="d:/桌面/图片/图片6.png">
+<meta property="og:image" content="d:/桌面/图片/图片7.png">
+<meta property="og:image" content="d:/桌面/图片/图片8.png">
+<meta property="og:image" content="d:/桌面/图片/图片9.png">
+<meta property="og:image" content="d:/桌面/图片/图片10.png">
+<meta property="og:image" content="d:/桌面/图片/图片11.png">
+<meta property="og:image" content="d:/桌面/图片/图片12.png">
+<meta property="og:image" content="d:/桌面/图片/图片13.png">
+<meta property="og:image" content="d:/桌面/图片/图片14.png">
+<meta property="og:image" content="d:/桌面/图片/图片15.png">
+<meta property="og:image" content="d:/桌面/图片/图片16.png">
+<meta property="og:image" content="d:/桌面/图片/图片17.png">
+<meta property="og:image" content="d:/桌面/图片/图片18.png">
+<meta property="og:image" content="d:/桌面/图片/图片19.png">
+<meta property="og:image" content="d:/桌面/图片/w1.jpg">
+<meta property="og:image" content="d:/桌面/图片/w2.png">
+<meta property="og:image" content="file:///D:/通讯软件/qq消息/885370797/Image/C2C/JT76]L4X7AN6O]U4A%60$]U~H.png">
+<meta property="og:image" content="d:/桌面/图片/w3.png">
+<meta property="og:image" content="d:/桌面/图片/w4.png">
+<meta property="article:published_time" content="2022-03-18T02:50:50.000Z">
+<meta property="article:modified_time" content="2022-03-24T13:36:01.375Z">
+<meta property="article:author" content="Sanyer">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/桌面/图片/微信图片_20220228190720.png"><title>笔记 | 懒大王的主场</title><link ref="canonical" href="http://example.com/2022/03/18/%E7%AC%94%E8%AE%B0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">懒大王的主场</div><div class="header-banner-info__subtitle">懒大王专场，舔羊勿进</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-24</span></span></div></header><div class="post-body">
+        <h1 id="渗透测试"   >
+          <a href="#渗透测试" class="heading-link"><i class="fas fa-link"></i></a><a href="#渗透测试" class="headerlink" title="渗透测试"></a>渗透测试</h1>
+      <p>curl file:&#x2F;&#x2F;&#x2F;目录&#x2F;文件 可绕过 可相当于cat使用</p>
+
+        <h2 id="网安法解读"   >
+          <a href="#网安法解读" class="heading-link"><i class="fas fa-link"></i></a><a href="#网安法解读" class="headerlink" title="网安法解读"></a>网安法解读</h2>
+      <p><img src="D:\桌面\图片\微信图片_20220228190720.png" alt="微信图片_20220228190720" style="zoom: 50%;" /><img src="D:\桌面\图片\微信图片_20220228190822.png" alt="微信图片_20220228190822" style="zoom: 50%;" /><img src="D:\桌面\图片\微信图片_20220228190846.png" alt="微信图片_20220228190846" style="zoom: 50%;" /><img src="D:\桌面\图片\微信图片_20220228190904.png" alt="微信图片_20220228190904" style="zoom: 50%;" /><img src="D:\桌面\图片\微信图片_20220228190923.png" alt="微信图片_20220228190923" style="zoom: 50%;" /></p>
+
+        <h2 id="虚拟机"   >
+          <a href="#虚拟机" class="heading-link"><i class="fas fa-link"></i></a><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h2>
+      
+        <h3 id="虚拟化技术四个阶段"   >
+          <a href="#虚拟化技术四个阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#虚拟化技术四个阶段" class="headerlink" title="虚拟化技术四个阶段"></a>虚拟化技术四个阶段</h3>
+      
+        <h4 id="硬件仿真虚拟化"   >
+          <a href="#硬件仿真虚拟化" class="heading-link"><i class="fas fa-link"></i></a><a href="#硬件仿真虚拟化" class="headerlink" title="硬件仿真虚拟化"></a>硬件仿真虚拟化</h4>
+      
+        <h4 id="完全虚拟化"   >
+          <a href="#完全虚拟化" class="heading-link"><i class="fas fa-link"></i></a><a href="#完全虚拟化" class="headerlink" title="完全虚拟化"></a>完全虚拟化</h4>
+      
+        <h4 id="半虚拟化"   >
+          <a href="#半虚拟化" class="heading-link"><i class="fas fa-link"></i></a><a href="#半虚拟化" class="headerlink" title="半虚拟化"></a>半虚拟化</h4>
+      
+        <h4 id="操作系统虚拟化"   >
+          <a href="#操作系统虚拟化" class="heading-link"><i class="fas fa-link"></i></a><a href="#操作系统虚拟化" class="headerlink" title="操作系统虚拟化"></a>操作系统虚拟化</h4>
+      
+        <h3 id="Docker-amp-K8S-容器内部占用少不容易入侵"   >
+          <a href="#Docker-amp-K8S-容器内部占用少不容易入侵" class="heading-link"><i class="fas fa-link"></i></a><a href="#Docker-amp-K8S-容器内部占用少不容易入侵" class="headerlink" title="Docker&amp;K8S    容器内部占用少不容易入侵"></a>Docker&amp;K8S    容器内部占用少不容易入侵</h3>
+      
+        <h2 id="操作系统功能"   >
+          <a href="#操作系统功能" class="heading-link"><i class="fas fa-link"></i></a><a href="#操作系统功能" class="headerlink" title="操作系统功能"></a>操作系统功能</h2>
+      
+        <h3 id="进程管理"   >
+          <a href="#进程管理" class="heading-link"><i class="fas fa-link"></i></a><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3>
+      <p>其工作主要是进程调度，在单用户任务的情况下，处理器仅为一个用户的一个任务所独占，进程管理的工作十分简单。但在多倒程序或多用户的情况下，组织多个作业或任务时，就要解决处理器的调度、分配和回收等问题。</p>
+
+        <h3 id="存储管理功能"   >
+          <a href="#存储管理功能" class="heading-link"><i class="fas fa-link"></i></a><a href="#存储管理功能" class="headerlink" title="存储管理功能"></a>存储管理功能</h3>
+      <p>存储分配、存储共享、存储保护、存储扩张</p>
+
+        <h3 id="设备管理分为以下功能"   >
+          <a href="#设备管理分为以下功能" class="heading-link"><i class="fas fa-link"></i></a><a href="#设备管理分为以下功能" class="headerlink" title="设备管理分为以下功能"></a>设备管理分为以下功能</h3>
+      <p>设备分配、设备传输控制、设备独立性</p>
+
+        <h3 id="文件管理"   >
+          <a href="#文件管理" class="heading-link"><i class="fas fa-link"></i></a><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h3>
+      <p>文件存储空间的管理、目录管理、文件操作管理、文件保护</p>
+
+        <h3 id="作业管理"   >
+          <a href="#作业管理" class="heading-link"><i class="fas fa-link"></i></a><a href="#作业管理" class="headerlink" title="作业管理"></a>作业管理</h3>
+      <p>负责处理用户提交的任何要求</p>
+
+        <h2 id="操作系统分类"   >
+          <a href="#操作系统分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#操作系统分类" class="headerlink" title="操作系统分类"></a>操作系统分类</h2>
+      
+        <h3 id="计算机操作系统主要分类"   >
+          <a href="#计算机操作系统主要分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#计算机操作系统主要分类" class="headerlink" title="计算机操作系统主要分类"></a>计算机操作系统主要分类</h3>
+      
+        <h4 id="操作系统包含类Unix和Windows两大阵营"   >
+          <a href="#操作系统包含类Unix和Windows两大阵营" class="heading-link"><i class="fas fa-link"></i></a><a href="#操作系统包含类Unix和Windows两大阵营" class="headerlink" title="操作系统包含类Unix和Windows两大阵营"></a>操作系统包含类Unix和Windows两大阵营</h4>
+      
+        <h5 id="类Unix：Linux、Mac-OS等"   >
+          <a href="#类Unix：Linux、Mac-OS等" class="heading-link"><i class="fas fa-link"></i></a><a href="#类Unix：Linux、Mac-OS等" class="headerlink" title="类Unix：Linux、Mac OS等"></a>类Unix：Linux、Mac OS等</h5>
+      
+        <h5 id="Windows：WindowsPC、Windows-Server等"   >
+          <a href="#Windows：WindowsPC、Windows-Server等" class="heading-link"><i class="fas fa-link"></i></a><a href="#Windows：WindowsPC、Windows-Server等" class="headerlink" title="Windows：WindowsPC、Windows Server等"></a>Windows：WindowsPC、Windows Server等</h5>
+      
+        <h6 id="Win-PC系统"   >
+          <a href="#Win-PC系统" class="heading-link"><i class="fas fa-link"></i></a><a href="#Win-PC系统" class="headerlink" title="Win PC系统"></a>Win PC系统</h6>
+      <p>Win Xp、Win7、Win10等其中Win Xp常被用于银行，ATM等更新换代比较慢的地方</p>
+
+        <h6 id="Windows-Sever服务器"   >
+          <a href="#Windows-Sever服务器" class="heading-link"><i class="fas fa-link"></i></a><a href="#Windows-Sever服务器" class="headerlink" title="Windows Sever服务器"></a>Windows Sever服务器</h6>
+      <p>2003、2012、2019以上系统常被用来搭建IIS，SQLSever服务器</p>
+
+        <h6 id="常见的Unix-x2F-Linux"   >
+          <a href="#常见的Unix-x2F-Linux" class="heading-link"><i class="fas fa-link"></i></a><a href="#常见的Unix-x2F-Linux" class="headerlink" title="常见的Unix&#x2F;Linux"></a>常见的Unix&#x2F;Linux</h6>
+      <p>Debian、Red Hat等</p>
+<p>其中Kali Linux是基于Debian的Linux发行版，设计用于数字取证操作系统。并且预装了许多渗透测试软件，包括nmap、Wireshark、John the Ripper等</p>
+
+        <h2 id="FHS目录定义"   >
+          <a href="#FHS目录定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#FHS目录定义" class="headerlink" title="FHS目录定义"></a>FHS目录定义</h2>
+      <p>FHS是根据过去的经验一直再持续的改版，FHS一局文件系统使用的频繁与是否允许使用者随意变动，而将目录定义成为四种交互作用的形态，用表格来说有点像底下这样：<img src="C:\Users\88537\AppData\Roaming\Typora\typora-user-images\image-20220228194100507.png" alt="image-20220228194100507"></p>
+
+        <h3 id="FHS目录定义的四种交互作用的形态定义"   >
+          <a href="#FHS目录定义的四种交互作用的形态定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#FHS目录定义的四种交互作用的形态定义" class="headerlink" title="FHS目录定义的四种交互作用的形态定义"></a>FHS目录定义的四种交互作用的形态定义</h3>
+      
+        <h4 id="可共享的"   >
+          <a href="#可共享的" class="heading-link"><i class="fas fa-link"></i></a><a href="#可共享的" class="headerlink" title="可共享的"></a>可共享的</h4>
+      <p>可以共享给其他系统挂载使用的目录，所以包括执行文件与用户的邮件等数据，是能够分享给网络上其他主机挂载用的目录</p>
+
+        <h4 id="不可共享的"   >
+          <a href="#不可共享的" class="heading-link"><i class="fas fa-link"></i></a><a href="#不可共享的" class="headerlink" title="不可共享的"></a>不可共享的</h4>
+      <p>本地计算机上面运行的设备文件或者是与程序有关的socket文件等，由于仅与自身机器有关，所以不能共享给其他计算机</p>
+
+        <h4 id="不可变动的"   >
+          <a href="#不可变动的" class="heading-link"><i class="fas fa-link"></i></a><a href="#不可变动的" class="headerlink" title="不可变动的"></a>不可变动的</h4>
+      <p>有些数据是不会经常变动的，跟随着文件distribution而不变动，例如函式库、文件说明文件、系统管理员所管理的主机服务配置文件等等</p>
+
+        <h4 id="可变动的"   >
+          <a href="#可变动的" class="heading-link"><i class="fas fa-link"></i></a><a href="#可变动的" class="headerlink" title="可变动的"></a>可变动的</h4>
+      <p>经常改变的数据，例如登录文件、一般用户可自行收受的新闻组等        </p>
+
+        <h2 id="根目录的意义"   >
+          <a href="#根目录的意义" class="heading-link"><i class="fas fa-link"></i></a><a href="#根目录的意义" class="headerlink" title="根目录的意义"></a>根目录的意义</h2>
+      <p>根目录是整个系统最重要的一个目录，因为不但所有的目录都是由根目录衍生出来的，同时根目录也与开机&#x2F;还原&#x2F;系统修复等动作有关</p>
+<p>由于系统开机时需要特定的开机软件、核心文件、开机所需程序、函式库等等文件数据，所以当系统出现错误时，根目录也必须要包含有能够修复文件系统的程序才行，由于根目录重要性，FHS建议根目录不要放在非常大的分区内。因为分区越大可能存储的文件就越多，如此一来可能会提高发生错误的概率。</p>
+
+        <h5 id="FHS标准建议："   >
+          <a href="#FHS标准建议：" class="heading-link"><i class="fas fa-link"></i></a><a href="#FHS标准建议：" class="headerlink" title="FHS标准建议："></a>FHS标准建议：</h5>
+      <p>根目录所在分区应该越小 越好，且应用程序所安装的软件最好不要与根目录放在同一个分区内。</p>
+<p>按照FHS标准执行，不但可以提高计算机的效能，而且也可以减少问题的产生。</p>
+
+        <h2 id="根目录包含内容"   >
+          <a href="#根目录包含内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#根目录包含内容" class="headerlink" title="根目录包含内容"></a>根目录包含内容</h2>
+      <p><img src="D:\桌面\图片\微信图片_20220228231600.png" alt="微信图片_20220228231600"><img src="D:\桌面\图片\微信图片_20220228231713a.png" alt="微信图片_20220228231713a"></p>
+
+        <h3 id="与根目录不可分开的目录"   >
+          <a href="#与根目录不可分开的目录" class="heading-link"><i class="fas fa-link"></i></a><a href="#与根目录不可分开的目录" class="headerlink" title="与根目录不可分开的目录"></a>与根目录不可分开的目录</h3>
+      <p>&#x2F;etc：配置文件</p>
+<p>&#x2F;bin：重要执行档</p>
+<p>&#x2F;dev:所需要的装置文件</p>
+<p>&#x2F;lib:执行当所需的函式库与核心所需的模块</p>
+<p>&#x2F;sbin:重要的系统执行文</p>
+
+        <h2 id="x2F-var目录的意义与内容"   >
+          <a href="#x2F-var目录的意义与内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#x2F-var目录的意义与内容" class="headerlink" title="&#x2F;var目录的意义与内容"></a>&#x2F;var目录的意义与内容</h2>
+      <p><img src="D:\桌面\图片\var.png" alt="var"></p>
+
+        <h2 id="命令提示符"   >
+          <a href="#命令提示符" class="heading-link"><i class="fas fa-link"></i></a><a href="#命令提示符" class="headerlink" title="命令提示符"></a>命令提示符</h2>
+      
+        <h3 id="含义"   >
+          <a href="#含义" class="heading-link"><i class="fas fa-link"></i></a><a href="#含义" class="headerlink" title="含义"></a>含义<img src="D:\桌面\图片\图片1.png" alt="图片1"></h3>
+      
+        <h3 id="什么是家目录"   >
+          <a href="#什么是家目录" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是家目录" class="headerlink" title="什么是家目录"></a>什么是家目录</h3>
+      <p><img src="D:\桌面\图片\图片2.png" alt="图片2"></p>
+
+        <h2 id="Linux命令的基本格式"   >
+          <a href="#Linux命令的基本格式" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux命令的基本格式" class="headerlink" title="Linux命令的基本格式"></a>Linux命令的基本格式</h2>
+      <p><img src="D:\桌面\图片\图片3.png" alt="图片3"></p>
+
+        <h2 id="Linux常用命令"   >
+          <a href="#Linux常用命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h2>
+      
+        <h3 id="常用关机命令："   >
+          <a href="#常用关机命令：" class="heading-link"><i class="fas fa-link"></i></a><a href="#常用关机命令：" class="headerlink" title="常用关机命令："></a>常用关机命令：</h3>
+      <p>1.poweroff 立刻关机</p>
+<p>2.halt 立刻关机</p>
+
+        <h3 id="常用重启命令"   >
+          <a href="#常用重启命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#常用重启命令" class="headerlink" title="常用重启命令"></a>常用重启命令</h3>
+      <p>1.reboot 立刻重启</p>
+
+        <h3 id="init命令："   >
+          <a href="#init命令：" class="heading-link"><i class="fas fa-link"></i></a><a href="#init命令：" class="headerlink" title="init命令："></a>init命令：</h3>
+      <p>1.–run level 0：关机</p>
+<p>2.–run level 3：纯文本模式</p>
+<p>3.–run level 6：重新启动</p>
+
+        <h3 id="用户登录"   >
+          <a href="#用户登录" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户登录" class="headerlink" title="用户登录"></a>用户登录</h3>
+      
+        <h4 id="1-login-登录"   >
+          <a href="#1-login-登录" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-login-登录" class="headerlink" title="1.login 登录"></a>1.login 登录</h4>
+      <p>基本语法login[name] [-p] [-h主机名称]</p>
+
+        <h4 id="2-用户登出命令"   >
+          <a href="#2-用户登出命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-用户登出命令" class="headerlink" title="2.用户登出命令"></a>2.用户登出命令</h4>
+      <p>exit 退出控制台</p>
+<p>logout注销用户</p>
+
+        <h3 id="拓展命令shutdown"   >
+          <a href="#拓展命令shutdown" class="heading-link"><i class="fas fa-link"></i></a><a href="#拓展命令shutdown" class="headerlink" title="拓展命令shutdown"></a>拓展命令shutdown</h3>
+      
+        <h4 id="c：取消前一个关机命令"   >
+          <a href="#c：取消前一个关机命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#c：取消前一个关机命令" class="headerlink" title="-c：取消前一个关机命令"></a>-c：取消前一个关机命令</h4>
+      
+        <h4 id="h：关机"   >
+          <a href="#h：关机" class="heading-link"><i class="fas fa-link"></i></a><a href="#h：关机" class="headerlink" title="-h：关机"></a>-h：关机</h4>
+      <p>shutdown -h now 立刻关机</p>
+<p>shutdown -h 10 十分钟后关机</p>
+<p>shutdown -h 11：11  11：11关机</p>
+
+        <h4 id="r：重启"   >
+          <a href="#r：重启" class="heading-link"><i class="fas fa-link"></i></a><a href="#r：重启" class="headerlink" title="-r：重启"></a>-r：重启</h4>
+      <p>shutdown -r now 立刻重启</p>
+<p>shutdown -r 10 十分钟后重启</p>
+<p>shutdown -r 11：11  11：11重启</p>
+
+        <h3 id="touch命令"   >
+          <a href="#touch命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令<img src="D:\桌面\图片\图片4.png" alt="图片4"></h3>
+      
+        <h3 id="rm删除命令"   >
+          <a href="#rm删除命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#rm删除命令" class="headerlink" title="rm删除命令"></a>rm删除命令<img src="D:\桌面\图片\图片5.png" alt="图片5"></h3>
+      
+        <h3 id="cp复制命令"   >
+          <a href="#cp复制命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#cp复制命令" class="headerlink" title="cp复制命令"></a>cp复制命令<img src="D:\桌面\图片\图片6.png" alt="图片6"></h3>
+      
+        <h3 id="rm移动命令"   >
+          <a href="#rm移动命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#rm移动命令" class="headerlink" title="rm移动命令"></a>rm移动命令<img src="D:\桌面\图片\图片7.png" alt="图片7"></h3>
+      
+        <h3 id="more显示命令"   >
+          <a href="#more显示命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#more显示命令" class="headerlink" title="more显示命令"></a>more显示命令<img src="D:\桌面\图片\图片8.png" alt="图片8"></h3>
+      
+        <h3 id="head查看命令"   >
+          <a href="#head查看命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#head查看命令" class="headerlink" title="head查看命令"></a>head查看命令</h3>
+      
+        <h3 id="tail查看命令"   >
+          <a href="#tail查看命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#tail查看命令" class="headerlink" title="tail查看命令"></a>tail查看命令<img src="D:\桌面\图片\图片9.png" alt="图片9"></h3>
+      
+        <h3 id="find查找命令rep内容查找命令"   >
+          <a href="#find查找命令rep内容查找命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#find查找命令rep内容查找命令" class="headerlink" title="find查找命令rep内容查找命令"></a>find查找命令rep内容查找命令<img src="D:\桌面\图片\图片10.png" alt="图片10"></h3>
+      
+        <h3 id="grep命令"   >
+          <a href="#grep命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令<img src="D:\桌面\图片\图片11.png" alt="图片11"></h3>
+      
+        <h3 id="whereis命令"   >
+          <a href="#whereis命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#whereis命令" class="headerlink" title="whereis命令"></a>whereis命令<img src="D:\桌面\图片\图片12.png" alt="图片12"></h3>
+      
+        <h3 id="which命令"   >
+          <a href="#which命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#which命令" class="headerlink" title="which命令"></a>which命令<img src="D:\桌面\图片\图片13.png" alt="图片13"></h3>
+      
+        <h3 id="tar打包命令"   >
+          <a href="#tar打包命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#tar打包命令" class="headerlink" title="tar打包命令"></a>tar打包命令<img src="D:\桌面\图片\图片14.png" alt="图片14"></h3>
+      
+        <h3 id="zip压缩命令"   >
+          <a href="#zip压缩命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#zip压缩命令" class="headerlink" title="zip压缩命令"></a>zip压缩命令</h3>
+      
+        <h3 id="unzip查看和解压zip"   >
+          <a href="#unzip查看和解压zip" class="heading-link"><i class="fas fa-link"></i></a><a href="#unzip查看和解压zip" class="headerlink" title="unzip查看和解压zip"></a>unzip查看和解压zip<img src="D:\桌面\图片\图片15.png" alt="图片15"></h3>
+      
+        <h2 id="VIM使用"   >
+          <a href="#VIM使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#VIM使用" class="headerlink" title="VIM使用"></a>VIM使用</h2>
+      <p><img src="D:\桌面\图片\图片16.png" alt="图片16"></p>
+<p><img src="D:\桌面\图片\图片17.png" alt="图片17"></p>
+<p><img src="D:\桌面\图片\图片18.png" alt="图片18"></p>
+<p><img src="D:\桌面\图片\图片19.png" alt="图片19"></p>
+
+        <h2 id="用户与用户组"   >
+          <a href="#用户与用户组" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户与用户组" class="headerlink" title="用户与用户组"></a>用户与用户组</h2>
+      <p>用户就是使用操作系统的人</p>
+
+        <h3 id="Linux与“用户”的关系"   >
+          <a href="#Linux与“用户”的关系" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux与“用户”的关系" class="headerlink" title="Linux与“用户”的关系"></a>Linux与“用户”的关系</h3>
+      <p>Linux系统是一个<strong>多用户多任务</strong>的分时操作系统，任何一个要使用系统资源的用户，都必须首先向管理员申请一个账号，然后以这个账号的身份进入系统</p>
+<p>每个用户账号都拥有唯一一个用户名和各自的口令</p>
+
+        <h3 id="用户的分类"   >
+          <a href="#用户的分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户的分类" class="headerlink" title="用户的分类"></a>用户的分类</h3>
+      
+        <h4 id="超级用户：拥有对系统的最高管理权限，默认是root用户"   >
+          <a href="#超级用户：拥有对系统的最高管理权限，默认是root用户" class="heading-link"><i class="fas fa-link"></i></a><a href="#超级用户：拥有对系统的最高管理权限，默认是root用户" class="headerlink" title="超级用户：拥有对系统的最高管理权限，默认是root用户"></a>超级用户：拥有对系统的最高管理权限，默认是root用户</h4>
+      
+        <h4 id="普通的用户：只能对自己目录下的文件进行访问和修改，具有登录到系统的权限"   >
+          <a href="#普通的用户：只能对自己目录下的文件进行访问和修改，具有登录到系统的权限" class="heading-link"><i class="fas fa-link"></i></a><a href="#普通的用户：只能对自己目录下的文件进行访问和修改，具有登录到系统的权限" class="headerlink" title="普通的用户：只能对自己目录下的文件进行访问和修改，具有登录到系统的权限"></a>普通的用户：只能对自己目录下的文件进行访问和修改，具有登录到系统的权限</h4>
+      
+        <h4 id="虚拟用户：不能登录系统，主要是方便管理系统，如：bin、adm、nobody用户等"   >
+          <a href="#虚拟用户：不能登录系统，主要是方便管理系统，如：bin、adm、nobody用户等" class="heading-link"><i class="fas fa-link"></i></a><a href="#虚拟用户：不能登录系统，主要是方便管理系统，如：bin、adm、nobody用户等" class="headerlink" title="虚拟用户：不能登录系统，主要是方便管理系统，如：bin、adm、nobody用户等"></a>虚拟用户：不能登录系统，主要是方便管理系统，如：bin、adm、nobody用户等</h4>
+      
+        <h3 id="用户和用户组的概念"   >
+          <a href="#用户和用户组的概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户和用户组的概念" class="headerlink" title="用户和用户组的概念"></a>用户和用户组的概念</h3>
+      
+        <h4 id="用户组"   >
+          <a href="#用户组" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h4>
+      <p>具有相同权限系统的一组用户</p>
+
+        <h4 id="用户组是具有相同特征用户的逻辑集合"   >
+          <a href="#用户组是具有相同特征用户的逻辑集合" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户组是具有相同特征用户的逻辑集合" class="headerlink" title="用户组是具有相同特征用户的逻辑集合"></a>用户组是具有相同特征用户的逻辑集合</h4>
+      
+        <h4 id="Linux将用户分组是Linux对用户进行管理及访问控制权限的一种手段，很大程度上简化了管理工作"   >
+          <a href="#Linux将用户分组是Linux对用户进行管理及访问控制权限的一种手段，很大程度上简化了管理工作" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux将用户分组是Linux对用户进行管理及访问控制权限的一种手段，很大程度上简化了管理工作" class="headerlink" title="Linux将用户分组是Linux对用户进行管理及访问控制权限的一种手段，很大程度上简化了管理工作"></a>Linux将用户分组是Linux对用户进行管理及访问控制权限的一种手段，很大程度上简化了管理工作</h4>
+      
+        <h3 id="用户和用户组的关系"   >
+          <a href="#用户和用户组的关系" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户和用户组的关系" class="headerlink" title="用户和用户组的关系"></a>用户和用户组的关系</h3>
+      
+        <h4 id="一对一"   >
+          <a href="#一对一" class="heading-link"><i class="fas fa-link"></i></a><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h4>
+      <p>一个用户可以存在一个组中，是组中的唯一成员</p>
+
+        <h4 id="一对多"   >
+          <a href="#一对多" class="heading-link"><i class="fas fa-link"></i></a><a href="#一对多" class="headerlink" title="一对多"></a>一对多</h4>
+      <p>一个用户可以存在多个用户组中，此用户具有多个组的共同权限</p>
+
+        <h4 id="多对一"   >
+          <a href="#多对一" class="heading-link"><i class="fas fa-link"></i></a><a href="#多对一" class="headerlink" title="多对一"></a>多对一</h4>
+      <p>多个用户可以存放在一个组中，这些用户具有和组相同的权限</p>
+
+        <h4 id="多对多"   >
+          <a href="#多对多" class="heading-link"><i class="fas fa-link"></i></a><a href="#多对多" class="headerlink" title="多对多"></a>多对多</h4>
+      <p>多个用户可以存在多个组中，即以上3种关系的扩展  </p>
+
+        <h3 id="相关文件的配置"   >
+          <a href="#相关文件的配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#相关文件的配置" class="headerlink" title="相关文件的配置"></a>相关文件的配置</h3>
+      
+        <h4 id="x2F-etc-x2F-passwd存储当前系统中所有用户的信息（密码除外）"   >
+          <a href="#x2F-etc-x2F-passwd存储当前系统中所有用户的信息（密码除外）" class="heading-link"><i class="fas fa-link"></i></a><a href="#x2F-etc-x2F-passwd存储当前系统中所有用户的信息（密码除外）" class="headerlink" title="&#x2F;etc&#x2F;passwd存储当前系统中所有用户的信息（密码除外）"></a>&#x2F;etc&#x2F;passwd存储当前系统中所有用户的信息（密码除外）</h4>
+      <p>该文件内容的每一行代表一个用户的配置信息，每个用户信息格式固定<img src="D:\桌面\图片\w1.jpg" alt="w1"></p>
+
+        <h4 id="x2F-etc-x2F-shadow存储当前系统中所有用户的密码信息"   >
+          <a href="#x2F-etc-x2F-shadow存储当前系统中所有用户的密码信息" class="heading-link"><i class="fas fa-link"></i></a><a href="#x2F-etc-x2F-shadow存储当前系统中所有用户的密码信息" class="headerlink" title="&#x2F;etc&#x2F;shadow存储当前系统中所有用户的密码信息"></a>&#x2F;etc&#x2F;shadow存储当前系统中所有用户的密码信息</h4>
+      <p>shadow配置文件的行数与passwd文件相同，并且每行与passwd每一行都对应passwd文件相同，并且每行与passwd每一行都对应</p>
+<p><img src="D:\桌面\图片\w2.png" alt="w2">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </p>
+
+        <h4 id="x2F-etc-x2F-group存储当前系统中所有用户组信息"   >
+          <a href="#x2F-etc-x2F-group存储当前系统中所有用户组信息" class="heading-link"><i class="fas fa-link"></i></a><a href="#x2F-etc-x2F-group存储当前系统中所有用户组信息" class="headerlink" title="&#x2F;etc&#x2F;group存储当前系统中所有用户组信息"></a>&#x2F;etc&#x2F;group存储当前系统中所有用户组信息</h4>
+      <p>该文件内容的每一行代表一个用户组，每个用户组信息格式固定</p>
+<p><img src="file:///D:\通讯软件\qq消息\885370797\Image\C2C\JT76]L4X7AN6O]U4A`$]U~H.png" alt="img"></p>
+
+        <h4 id="x2F-etc-x2F-gshadow存储用户组密码的一类信息"   >
+          <a href="#x2F-etc-x2F-gshadow存储用户组密码的一类信息" class="heading-link"><i class="fas fa-link"></i></a><a href="#x2F-etc-x2F-gshadow存储用户组密码的一类信息" class="headerlink" title="&#x2F;etc&#x2F;gshadow存储用户组密码的一类信息"></a>&#x2F;etc&#x2F;gshadow存储用户组密码的一类信息</h4>
+      <p>gpasswd用于存放组的加密密码，每个组账户在该行占用一行，每行分为4个字段</p>
+<p><img src="D:\桌面\图片\w3.png" alt="w3"></p>
+
+        <h4 id="从相关文件分析用户和组之间的联系"   >
+          <a href="#从相关文件分析用户和组之间的联系" class="heading-link"><i class="fas fa-link"></i></a><a href="#从相关文件分析用户和组之间的联系" class="headerlink" title="从相关文件分析用户和组之间的联系"></a>从相关文件分析用户和组之间的联系</h4>
+      <p><img src="D:\桌面\图片\w4.png" alt="w4"></p>
+
+        <h3 id="相关命令"   >
+          <a href="#相关命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3>
+      
+        <h4 id="用户命令"   >
+          <a href="#用户命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户命令" class="headerlink" title="用户命令"></a>用户命令</h4>
+      <p><strong>useradd 用户名</strong>                            创建用户，同时创建与用户名同名得组</p>
+<p><strong>useradd -g 组名 用户名</strong>               创建用户并指定用户组</p>
+<p><strong>useradd 用户名 -s xxx</strong>                  创建用户并指定用户登录后所使用得shell，如果值为&#x2F;sbin&#x2F;nologin或者&#x2F;bin&#x2F;false时，表示禁止该用户登录</p>
+<p><strong>usermod -g 用户组 用户名</strong>            修改用户所在用户组</p>
+<p><strong>usermod -l（是L） 新用户名 用户名</strong>         修改用户名</p>
+<p><strong>userdel用户名</strong>                                删除用户，不删除用户得主目录</p>
+
+        <h4 id="修改密码"   >
+          <a href="#修改密码" class="heading-link"><i class="fas fa-link"></i></a><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4>
+      <p>普通用户直接输入passwd命令修改自己的密码，不能加用户名修改别的用户密码</p>
+<p>普通用户设置密码必须符合密码原则，root用户可以任意设置</p>
+<p><strong>passwd 用户名</strong>                             修改用户密码（如果是新创建用户即为设置密码）</p>
+<p><strong>gpasswd用户组</strong>                            修改&#x2F;设置用户组密码</p>
+
+        <h4 id="用户管理其他命令"   >
+          <a href="#用户管理其他命令" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户管理其他命令" class="headerlink" title="用户管理其他命令"></a>用户管理其他命令</h4>
+      <p><strong>su 用户名</strong>                                     切换用户身份，如果不带参数，则切换为root身份</p>
+<p><strong>id 用户名</strong>                                      显示指定用户信息，包括用户编号，用户名，组编名、组名</p>
+<p><strong>whoami</strong>                                        显示当前登录用户名</p>
+
+        <h2 id="Linux权限控制"   >
+          <a href="#Linux权限控制" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux权限控制" class="headerlink" title="Linux权限控制"></a>Linux权限控制</h2>
+      
+        <h3 id="文件权限"   >
+          <a href="#文件权限" class="heading-link"><i class="fas fa-link"></i></a><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3>
+      <p>输入 ls -l，可以查看文件的权限</p>
+<p>每个文件针对每类访问者定义了三种主要权限，其中，第一位：代表文件类型，后面每3位代表一组权限，分别是：所有者，所属组和其他人</p>
+<p>文件权限分别为：读、写、执行、简写即为（r，w，x），也可以可用数字（4，2，1）表示，-即无权限</p>
+
+        <h4 id="注意："   >
+          <a href="#注意：" class="heading-link"><i class="fas fa-link"></i></a><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4>
+      <p>1.root账户不受文件权限的读写限制，执行权限受限制</p>
+<p>2.用户获取文件权限的顺序：先看是否为所有者，如果是，则后面权限不看；再看是否为所属组，如果是，则后面权限不看</p>
+<p>3.缺省创建的文件不可授予可执行的权限，基于最基本的安全机制，防止病毒等</p>
+
+        <h4 id="文件和目录权限含义和作用不同"   >
+          <a href="#文件和目录权限含义和作用不同" class="heading-link"><i class="fas fa-link"></i></a><a href="#文件和目录权限含义和作用不同" class="headerlink" title="文件和目录权限含义和作用不同"></a>文件和目录权限含义和作用不同</h4>
+      
+        <h5 id="针对文件"   >
+          <a href="#针对文件" class="heading-link"><i class="fas fa-link"></i></a><a href="#针对文件" class="headerlink" title="针对文件"></a>针对文件</h5>
+      <p>r：读取文件内容，如cat、more、tail、head等</p>
+<p>w：修改文件内容，如vim、echo等</p>
+<p>x：执行权限，如 命令，脚本等，对除二进制程序以外的文件没什么意义</p>
+
+        <h5 id="针对目录"   >
+          <a href="#针对目录" class="heading-link"><i class="fas fa-link"></i></a><a href="#针对目录" class="headerlink" title="针对目录"></a>针对目录</h5>
+      <p>目录本质可看做是存放文件列表。节点号等内容的文件</p>
+<p>r：查看目录下的文件列表 如ls</p>
+<p>w：删除和创建目录下的文件，如touch、mkdir、rm</p>
+<p>x：可以cd进入目录，能查看目录中文件的详细属性，能访问目录下文件内容（基础权限）</p>
+
+        <h3 id="显示、设置文件的默认权限"   >
+          <a href="#显示、设置文件的默认权限" class="heading-link"><i class="fas fa-link"></i></a><a href="#显示、设置文件的默认权限" class="headerlink" title="显示、设置文件的默认权限"></a>显示、设置文件的默认权限</h3>
+      <p>umask [-s]    显示、设置文件的默认权限    </p>
+
+        <h4 id="参数说明"   >
+          <a href="#参数说明" class="heading-link"><i class="fas fa-link"></i></a><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4>
+      <p>-S以rwx形式显示新建文件的默认权限</p>
+
+        <h4 id="命令说明："   >
+          <a href="#命令说明：" class="heading-link"><i class="fas fa-link"></i></a><a href="#命令说明：" class="headerlink" title="命令说明："></a>命令说明：</h4>
+      <p>对于windows而言，默认权限是从上级目录继承而来的，而Linux则是通过umask权限设定的</p>
+<p>如果用户建立文件，默认是没有可执行权限的，即权限表示为-rw-rw-rw，即666</p>
+<p>如果用户建立目录，默认权限是全开放的，即权限表示drwxrwxrwx，即777</p>
+<p>umask的值，默认为022，就是需要减掉的权限</p>
+<p>默认传播关键的文件和目录权限分别为644和755</p>
+
+        <h2 id="JavaScript"   >
+          <a href="#JavaScript" class="heading-link"><i class="fas fa-link"></i></a><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2>
+      
+        <h3 id="JavaScript输出"   >
+          <a href="#JavaScript输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#JavaScript输出" class="headerlink" title="JavaScript输出"></a>JavaScript输出</h3>
+      
+        <h4 id="操作HTML元素"   >
+          <a href="#操作HTML元素" class="heading-link"><i class="fas fa-link"></i></a><a href="#操作HTML元素" class="headerlink" title="操作HTML元素"></a>操作HTML元素</h4>
+      
+        <h5 id="访问HTML元素"   >
+          <a href="#访问HTML元素" class="heading-link"><i class="fas fa-link"></i></a><a href="#访问HTML元素" class="headerlink" title="访问HTML元素"></a>访问HTML元素</h5>
+      <p>如需从JavaScript访问某个HTML元素，可以使用document.getElementById（id）方法</p>
+<p>使用“id”属性来标识HTML元素</p>
+
+        <h3 id="JavaScript语言基础"   >
+          <a href="#JavaScript语言基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#JavaScript语言基础" class="headerlink" title="JavaScript语言基础"></a>JavaScript语言基础</h3>
+      
+        <h4 id="变量的声明-amp-初始化"   >
+          <a href="#变量的声明-amp-初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#变量的声明-amp-初始化" class="headerlink" title="变量的声明&amp;初始化"></a>变量的声明&amp;初始化</h4>
+      
+        <h5 id="变量的声明"   >
+          <a href="#变量的声明" class="heading-link"><i class="fas fa-link"></i></a><a href="#变量的声明" class="headerlink" title="变量的声明"></a>变量的声明</h5>
+      <p>var<variable_name>;&#x2F;&#x2F;变量名须为有效标识符</p>
+<p>变量的初始化</p>
+<p>var <variable_name>&#x3D;value;</p>
+
+        <h3 id="JavaScript的内部对象"   >
+          <a href="#JavaScript的内部对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#JavaScript的内部对象" class="headerlink" title="JavaScript的内部对象"></a>JavaScript的内部对象</h3>
+      
+        <h4 id="Date对象"   >
+          <a href="#Date对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h4>
+      <p>getDate 返回一个月中的某一天（1~31）</p>
+<p>getDay 返回一周中的某一天（0~6），0为周日，1为周一</p>
+<p>getFullYear 以四位数返回年份</p>
+<p>getHours 返回小时（0~23）</p>
+<p>getMinutes 返回分钟（0~59）</p>
+<p>getSeconds 返回秒数（0~59）</p>
+<p>getMonth 返回月份（0~11），0为一月，1为二月，以此类推</p>
+<p>getTime 返回1970年1月1日至今的毫秒数</p>
+
+        <h4 id="String对象"   >
+          <a href="#String对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#String对象" class="headerlink" title="String对象"></a>String对象</h4>
+      <p>charAT    返回字符串对象中指定索引处的字符，索引从0开始</p>
+<p>indexOf    返回某个子字符串在目标字符串中首次出现的位置</p>
+<p>substr    从指定索引位置开始截取指定长度的字符串</p>
+<p>toLowerCase    把字符串转化为小写</p>
+<p>toUpperCase    把字符串转化为大写</p>
+<p>split    返回按照指定分隔符拆分的若干子字符串数组</p>
+
+        <h5 id="创建字符串"   >
+          <a href="#创建字符串" class="heading-link"><i class="fas fa-link"></i></a><a href="#创建字符串" class="headerlink" title="创建字符串"></a>创建字符串</h5>
+      <p>创建字符串的三种方法：</p>
+<p>1.String和new一起使用，创建的是一个字符串对象    var str&#x3D;new String（）</p>
+<p>2.内建函数，使用String（）类型函数可以构造字符串</p>
+<p>3.直接量，使用双引号或单引号包含任意长度的文本</p>
+
+        <h5 id="常用的字符串方法"   >
+          <a href="#常用的字符串方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#常用的字符串方法" class="headerlink" title="常用的字符串方法"></a>常用的字符串方法</h5>
+      <p>toLowerCase、toUpperCase    转小写，转大写</p>
+<p>indexOf                                        查找字符串，返回索引值</p>
+<p>substring                                        返回被操作字符串的一个子字符串</p>
+<p>substr                                                返回被操作字符串的一个子字符串</p>
+<p>split                                                     将字符串按照指定的分隔符分割成数组</p>
+<p>trim                                                        清空空格</p>
+<p>match                                                        查找指定的值，返回匹配的值</p>
+<p>search                                                        检索字符串首次出现的位置</p>
+<p>replace                                                        替换指定字符</p>
+
+        <h4 id="JavaScript数组"   >
+          <a href="#JavaScript数组" class="heading-link"><i class="fas fa-link"></i></a><a href="#JavaScript数组" class="headerlink" title="JavaScript数组"></a>JavaScript数组</h4>
+      
+        <h5 id="数组赋值"   >
+          <a href="#数组赋值" class="heading-link"><i class="fas fa-link"></i></a><a href="#数组赋值" class="headerlink" title="数组赋值"></a>数组赋值</h5>
+      <p>1.创建数组的同时赋值：</p>
+<p>var num&#x3D;new Array（66，80，90，77，49）</p>
+<p>2.直接输入一个数组：</p>
+<p>var num&#x3D;[66,80,90,77,49];</p>
+
+        <h5 id="数组中的常用方法"   >
+          <a href="#数组中的常用方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#数组中的常用方法" class="headerlink" title="数组中的常用方法"></a>数组中的常用方法</h5>
+      <p>length                设置或返回数组中元素的数目</p>
+<p>push（）            将新元素添加到一个数组的尾部，并返回数组的新长度值</p>
+<p>pop（）                移除数组中的最后一个元素并返回该元素</p>
+<p>sort（）                对数组排序</p>
+<p>reverse（）            对数组进行反转（主义：不是倒序）</p>
+<p>concat（）                返回一个新数组，这个新数组是由多个数组组合而成的</p>
+<p>join（）                        把数组的所有元素放入一个字符串中，通过一个的分隔符进行分隔</p>
+<p>split（）                        将一个字符串分割成一个数组</p>
+
+        <h3 id="JavaScript-DOM操作"   >
+          <a href="#JavaScript-DOM操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#JavaScript-DOM操作" class="headerlink" title="JavaScript DOM操作"></a>JavaScript DOM操作</h3>
+      
+        <h4 id="节点的访问"   >
+          <a href="#节点的访问" class="heading-link"><i class="fas fa-link"></i></a><a href="#节点的访问" class="headerlink" title="节点的访问"></a>节点的访问</h4>
+      <p>1.访问指定元素</p>
+<p>一个元素对象可以拥有元素节点、文本节点、子节点或其他类型的节点</p>
+<p>访问指定节点的常用方法如下：</p>
+<p>getElementById（）        获取拥有指定ID的第一个元素对象的引用</p>
+<p>getElementsByTagName（）        获取带有指定标签名的元素对象集合</p>
+<p>getElementsByName（）                 获取带有指定名称的元素对象集合</p>
+<p>getElementsByClassName（）        获取指定class的元素对象集合（不支持IE6~8浏览器）</p>
+<p>2.访问相关元素</p>
+<p>引用完成一个页面元素对象后，可以使用DOM节点对象的parentNode、childNodes、firstChild、lastChild、previous Sibling或nextSibling属性访问相对于该页面元素的父、子或兄弟元素</p>
+<p>访问指定节点的常用方法如下：</p>
+<p>parentNode                            元素节点的父节点</p>
+<p>childNodes                            元素节点的子节点数组</p>
+<p>firstChild                                元素节点的子节点数组</p>
+<p>lastChild                                  最后一个子节点</p>
+
+        <h3 id="JavaScript事件"   >
+          <a href="#JavaScript事件" class="heading-link"><i class="fas fa-link"></i></a><a href="#JavaScript事件" class="headerlink" title="JavaScript事件"></a>JavaScript事件</h3>
+      
+        <h4 id="常用的事件"   >
+          <a href="#常用的事件" class="heading-link"><i class="fas fa-link"></i></a><a href="#常用的事件" class="headerlink" title="常用的事件"></a>常用的事件</h4>
+      <p>onclick                    鼠标单击页面元素时触发的事件</p>
+<p>onload                    在页面加载完成后立即发生</p>
+<p>onunload                用户关闭或刷新网页时触发onunload事件</p>
+<p>onblur                     指光标或者焦点离开元素后触发的事件</p>
+<p>onchange                指输入框的值发生了变化或者改变下列列表框的选项会触发onchange事件</p>
+<p>onmouseover        指鼠标移入页面元素时触发的事件</p>
+<p>onmouseout            是指鼠标移出页面元素时触发的事件</p>
+
+        <h2 id="PHP基础"   >
+          <a href="#PHP基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#PHP基础" class="headerlink" title="PHP基础"></a>PHP基础</h2>
+      
+        <h3 id="PHP概述"   >
+          <a href="#PHP概述" class="heading-link"><i class="fas fa-link"></i></a><a href="#PHP概述" class="headerlink" title="PHP概述"></a>PHP概述</h3>
+      
+        <h4 id="注释"   >
+          <a href="#注释" class="heading-link"><i class="fas fa-link"></i></a><a href="#注释" class="headerlink" title="注释"></a>注释</h4>
+      <p>&#x2F;&#x2F;单行注释</p>
+<p>#单行注释</p>
+<p>&#x2F;**&#x2F;多行注释，可以跨行</p>
+
+        <h4 id="变量"   >
+          <a href="#变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#变量" class="headerlink" title="变量"></a>变量</h4>
+      <p>PHP的变量是一种弱类型变量，即变量无特定数据类型，不需要事先声明，并可以通过赋值将其初始化为任何数据类型</p>
+
+        <h4 id="变量规则"   >
+          <a href="#变量规则" class="heading-link"><i class="fas fa-link"></i></a><a href="#变量规则" class="headerlink" title="变量规则"></a>变量规则</h4>
+      <p>变量以$符号开头，其后是变量的名称</p>
+<p>变量名称必须以字母或下划线开头，而不能以数字开头</p>
+<p>变量名称只能包含字母、数字和下划线（A-z、0-9以及_）</p>
+<p>变量名称区分大小写，建议用小写</p>
+<p>PHP没有创建变量的命令，变量会在首次为其赋值时自动被创建</p>
+<p>PHP是一门类型松散的语言，在为变量赋值时，不必声明变量的数据类型，PHP会自动把变量转化为相应的数据类型</p>
+
+        <h3 id="PHP数据类型"   >
+          <a href="#PHP数据类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#PHP数据类型" class="headerlink" title="PHP数据类型"></a>PHP数据类型</h3>
+      
+        <h4 id="字符串"   >
+          <a href="#字符串" class="heading-link"><i class="fas fa-link"></i></a><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4>
+      <p>字符串要用单引号或双引号括住，字符串中可以包括html标记</p>
+<p>*用单引号时，程序不会对字符串进行解析。如果字符串中包含变量，也只输出变量名，而不会输出变量值</p>
+<p>*用双引号则会对字符串进行解析。如果字符串中包含变量，则会对变量进行解析而输出变量的值</p>
+<p>*当一个字符串时纯文本组成的时候，尽量用单引号</p>
+
+        <h4 id="整数、浮点数、布尔型、NULL值"   >
+          <a href="#整数、浮点数、布尔型、NULL值" class="heading-link"><i class="fas fa-link"></i></a><a href="#整数、浮点数、布尔型、NULL值" class="headerlink" title="整数、浮点数、布尔型、NULL值"></a>整数、浮点数、布尔型、NULL值</h4>
+      
+        <h4 id="运算符"   >
+          <a href="#运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4>
+      <p>算数运算符：+-*%</p>
+<p>字符串运算符： .串接            a.b等同于a&#x3D;a.b连接两个字符串</p>
+<p>递增递减运算符 ++$x 、$x++、–$x、$x–</p>
+<p>比较运算符：&#x3D;&#x3D;等于 &#x3D;&#x3D;&#x3D;全等于 ！&#x3D;不等于 &lt;&gt;不等于  ！&#x3D;&#x3D;不全等（完全不同）&gt;大于 &lt;小于 &gt;&#x3D;大于或等于 &lt;&#x3D;小于或等于</p>
+<p>PHP逻辑运算符： and与 or或   xor异或  &amp;&amp;与 ||或  !非</p>
+
+        <h4 id="数组的基本操作"   >
+          <a href="#数组的基本操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#数组的基本操作" class="headerlink" title="数组的基本操作"></a>数组的基本操作</h4>
+      
+        <h5 id="数组排序"   >
+          <a href="#数组排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h5>
+      <p>sort:以升序对数组排序</p>
+<p>rsort：以降序对数组排序</p>
+<p>ksort：根据键，以升序对关联数组进行排序</p>
+<p>krsort：根据键，以降序对关联数组进行排序</p>
+<p>asort：根据值，以升序对关联数组进行排序</p>
+<p>arsort：根据值，以降序对关联数据进行排序</p>
+
+        <h4 id="PHP标准函数库"   >
+          <a href="#PHP标准函数库" class="heading-link"><i class="fas fa-link"></i></a><a href="#PHP标准函数库" class="headerlink" title="PHP标准函数库"></a>PHP标准函数库</h4>
+      
+        <h6 id="变量函数库"   >
+          <a href="#变量函数库" class="heading-link"><i class="fas fa-link"></i></a><a href="#变量函数库" class="headerlink" title="变量函数库"></a>变量函数库</h6>
+      <p>empty    检查变量是否为空，为空返回TRUE否则为FALSE    empty（变量）</p>
+<p>gettype    获取变量的类型</p>
+<p>is_array    检查变量是否为数组类型</p>
+<p>isset        检查变量是否被设置或赋值</p>
+<p>unset        释放给定变量，即销毁变量</p>
+<p>var_dump    打印变量的相关信息</p>
+
+        <h6 id="字符串函数"   >
+          <a href="#字符串函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h6>
+      <p>strlen    计算字符串长度</p>
+<p>substr    截取字符串，采用 <strong>起点——长度</strong>方式 substr（字符串，开始，长度）</p>
+<p>strstr    截取字符串，采用<strong>字串——结尾</strong>方式 strstr（字符串，标识）</p>
+<p>explode    分割字符串，将字符串毁成数组</p>
+<p>trim    去掉左右空格</p>
+<p>md5    计算MD5哈希（加密）</p>
+
+        <h4 id="PHP类和对象"   >
+          <a href="#PHP类和对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#PHP类和对象" class="headerlink" title="PHP类和对象"></a>PHP类和对象</h4>
+      
+        <h5 id="PHP对象"   >
+          <a href="#PHP对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#PHP对象" class="headerlink" title="PHP对象"></a>PHP对象</h5>
+      
+        <h6 id="初始化对象-construct（）"   >
+          <a href="#初始化对象-construct（）" class="heading-link"><i class="fas fa-link"></i></a><a href="#初始化对象-construct（）" class="headerlink" title="初始化对象_construct（）{}"></a>初始化对象_construct（）{}</h6>
+      
+        <h6 id="析构函数-destruct"   >
+          <a href="#析构函数-destruct" class="heading-link"><i class="fas fa-link"></i></a><a href="#析构函数-destruct" class="headerlink" title="析构函数_destruct(){}"></a>析构函数_destruct(){}</h6>
+      
+        <h3 id="PHP表单处理"   >
+          <a href="#PHP表单处理" class="heading-link"><i class="fas fa-link"></i></a><a href="#PHP表单处理" class="headerlink" title="PHP表单处理"></a>PHP表单处理</h3>
+      
+        <h4 id="表单属性"   >
+          <a href="#表单属性" class="heading-link"><i class="fas fa-link"></i></a><a href="#表单属性" class="headerlink" title="表单属性"></a>表单属性</h4>
+      <p>表单METHOD属性        说明本表单向服务器发送输入信息时的使用方式</p>
+<p>一般有两种选择：POST和GET，默认的方式时GET</p>
+<p>get方法    *表单作为字符串附加在ACTION所设定的URL后面    *用？和&amp;隔开，然后把整个字符串传送到服务器端  *get方式数据长度受限（一般2k）不具有保密性</p>
+<p>post方法 *对任何人都是不可见的（不会显示在浏览器的地址栏），并且对发送信息的量也没有限制。但默认情况下，POST 方法的发送信息的量最大值为 8 MB</p>
+
+        <h3 id="Cookie"   >
+          <a href="#Cookie" class="heading-link"><i class="fas fa-link"></i></a><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3>
+      <p>cookie 常用于识别用户。cookie 是一种服务器留在用户计算机上的小文件。每当同一台计算机通过浏览器请求页面时，这台计算机将会发送 cookie</p>
+<p>SetCookie（）之前不能有审核html输出，空格、空白行都不行</p>
+<p>SetCookie（）后，在当前页调用echo $_COOKIE[“name”]不会有输出，必须刷新或到下一个页面菜可以看到Cookie值</p>
+<p>使用Cookie的限制，一个浏览器能创建的Cookie数量最多为30个，并且每个不能超过4kb，每个WEB站点能设置的Cookie总数不能超过20个</p>
+<p>Cookie时保存在客户端的，如果 用户禁用了Cookie，那么cookie也就失效了</p>
+<p>设置一个cookie时失效时间为time（）那么在页面浏览完之后就被删除</p>
+
+        <h3 id="Session"   >
+          <a href="#Session" class="heading-link"><i class="fas fa-link"></i></a><a href="#Session" class="headerlink" title="Session"></a>Session</h3>
+      <p>用户在浏览某个网站时，从进入网站到浏览器关闭所经过的这段时间，也就是用户浏览这个网站所花费的时间。实际上是一个特定的时间概念。session默认的生命周期为20分钟</p>
+<p>Session可以用于身份认证，程序状态记录，页面之间的参数传递等</p>
+<p><strong>因为HTTP协议无状态，为了在服务器保持客户端的状态，就需要使用Session</strong></p>
+
+        <h3 id="Cookie与Session的区别"   >
+          <a href="#Cookie与Session的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#Cookie与Session的区别" class="headerlink" title="Cookie与Session的区别"></a>Cookie与Session的区别</h3>
+      <p>相同点：</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>异同点</th>
+<th></th>
+<th>Cookie</th>
+<th>Session</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>相同</td>
+<td>能够保存用户信息的区别</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>不同点</td>
+<td>存储位置</td>
+<td>存放在客户端浏览器</td>
+<td>存放在服务器</td>
+</tr>
+<tr>
+<td></td>
+<td>保存时间</td>
+<td>设定在有效保存期限</td>
+<td>关闭浏览器后自动作废</td>
+</tr>
+<tr>
+<td></td>
+<td>存储容量</td>
+<td>每个浏览器只能保存某个Web服务器的最多20个cookie且大小不超过4KB</td>
+<td>可以创建多个但是过多会影响服务器性能</td>
+</tr>
+<tr>
+<td></td>
+<td>是否被禁用</td>
+<td>用户设置是否开启cookie</td>
+<td>不会被禁用，因为内容保存在服务器端</td>
+</tr>
+<tr>
+<td></td>
+<td>隐私策略</td>
+<td>对客户端可见，不安全</td>
+<td>存储在服务器，较安全</td>
+</tr>
+<tr>
+<td></td>
+<td>跨域支持</td>
+<td>支持跨域名访问</td>
+<td>不支持跨域名访问</td>
+</tr>
+</tbody></table></div>
+
+        <h2 id="MySql"   >
+          <a href="#MySql" class="heading-link"><i class="fas fa-link"></i></a><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h2>
+      
+        <h3 id="Mysql命令使用"   >
+          <a href="#Mysql命令使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#Mysql命令使用" class="headerlink" title="Mysql命令使用"></a>Mysql命令使用</h3>
+      <p>登录 mysql-h host name -u user_name -p密码</p>
+<p>数据类型种类（字符串）</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>序列</th>
+<th>说明</th>
+<th>序列</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\0</td>
+<td>NUll</td>
+<td>\n</td>
+<td>新行</td>
+</tr>
+<tr>
+<td>&#39;</td>
+<td>单引号</td>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>双引号</td>
+<td>\t</td>
+<td>制表符</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格</td>
+<td>\</td>
+<td>反斜杠</td>
+</tr>
+</tbody></table></div>
+<p>数值列类型</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>类型名</th>
+<th>说明</th>
+<th>类型名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TINYINT</td>
+<td>非常小的整数</td>
+<td>BIGINT</td>
+<td>大整数</td>
+</tr>
+<tr>
+<td>SMALLTNT</td>
+<td>较小的整数</td>
+<td>FLOAT</td>
+<td>单精度浮点数</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td>中等大小的整数</td>
+<td>DOUBLE</td>
+<td>双精度浮点数</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>标准整数</td>
+<td>DECIMAL</td>
+<td>一个串的浮点数</td>
+</tr>
+</tbody></table></div>
+<p>字符串类型</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>类型名</th>
+<th>说明</th>
+<th>类型名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CHAR</td>
+<td>定长字符串0~255</td>
+<td>ENUM</td>
+<td>枚举；列可赋予某个枚举成员</td>
+</tr>
+<tr>
+<td>VARCHAR</td>
+<td>可变长字符串0~255</td>
+<td>SET</td>
+<td>集合；列可赋予多个集合成员</td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td>存储图像文件  二进制</td>
+<td>TEXT</td>
+<td>小文本串</td>
+</tr>
+</tbody></table></div>
+<p>PHP操作MySql</p>
+<p>第一步连接MySql服务器 使用mysql_connect() 函数建立与MySql服务器的连接</p>
+<p>第二步：选择MySQL数据库 使用mysql_select_db()函数选择MySQL数据库服务器上的数据库，并与数据库建立连接</p>
+<p>第三步：执行SQL语句在选择的数据库中使用mysql_query()函数执行SQl语句。对数据的操作方式主要包括4种方式sllect、insert into、update、delete</p>
+<p>第四步：关闭结果集mysql_free_result($result)</p>
+<p>第五步：关闭MySql服务器mysql_close($link);</p>
+<p>相关函数介绍</p>
+<p>mysql_connect(‘hostname’,’username’,’password’)</p>
+<p>mysql_select_db(string数据库名[,resource linnk_identifier]);或mysql_query(“use数据库名”[,resource link_identifier]);</p>
+<p>mysql_query(string query [,resource link_identifier])</p>
+<p>mysql_fetch_cow()逐行获取结果记录种的每天记录、</p>
+<p>mysql_num_rows()获取由select语句查询到的结果集中行的数目</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/03/23/SQLI-DUMB-SERIES-1-0/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">SQLI DUMB SERIES-1</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/03/15/Ubuntu%E5%AE%89%E8%A3%85MySQL%E9%94%99%E8%AF%AF1698/"><span class="paginator-prev__text">Ubuntu安装MySQL错误1698</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text">
+          渗透测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E5%AE%89%E6%B3%95%E8%A7%A3%E8%AF%BB"><span class="toc-number">1.1.</span> <span class="toc-text">
+          网安法解读</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-number">1.2.</span> <span class="toc-text">
+          虚拟机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          虚拟化技术四个阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E4%BB%BF%E7%9C%9F%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">
+          硬件仿真虚拟化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">
+          完全虚拟化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8A%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">
+          半虚拟化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">
+          操作系统虚拟化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-amp-K8S-%E5%AE%B9%E5%99%A8%E5%86%85%E9%83%A8%E5%8D%A0%E7%94%A8%E5%B0%91%E4%B8%8D%E5%AE%B9%E6%98%93%E5%85%A5%E4%BE%B5"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          Docker&amp;K8S    容器内部占用少不容易入侵</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.</span> <span class="toc-text">
+          操作系统功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+          进程管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.2.</span> <span class="toc-text">
+          存储管理功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%88%86%E4%B8%BA%E4%BB%A5%E4%B8%8B%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.3.</span> <span class="toc-text">
+          设备管理分为以下功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.4.</span> <span class="toc-text">
+          文件管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.5.</span> <span class="toc-text">
+          作业管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%88%86%E7%B1%BB"><span class="toc-number">1.4.</span> <span class="toc-text">
+          操作系统分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%BB%E8%A6%81%E5%88%86%E7%B1%BB"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+          计算机操作系统主要分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8C%85%E5%90%AB%E7%B1%BBUnix%E5%92%8CWindows%E4%B8%A4%E5%A4%A7%E9%98%B5%E8%90%A5"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">
+          操作系统包含类Unix和Windows两大阵营</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BBUnix%EF%BC%9ALinux%E3%80%81Mac-OS%E7%AD%89"><span class="toc-number">1.4.1.1.1.</span> <span class="toc-text">
+          类Unix：Linux、Mac OS等</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Windows%EF%BC%9AWindowsPC%E3%80%81Windows-Server%E7%AD%89"><span class="toc-number">1.4.1.1.2.</span> <span class="toc-text">
+          Windows：WindowsPC、Windows Server等</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Win-PC%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.4.1.1.2.1.</span> <span class="toc-text">
+          Win PC系统</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Windows-Sever%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.4.1.1.2.2.</span> <span class="toc-text">
+          Windows Sever服务器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84Unix-x2F-Linux"><span class="toc-number">1.4.1.1.2.3.</span> <span class="toc-text">
+          常见的Unix&#x2F;Linux</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FHS%E7%9B%AE%E5%BD%95%E5%AE%9A%E4%B9%89"><span class="toc-number">1.5.</span> <span class="toc-text">
+          FHS目录定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FHS%E7%9B%AE%E5%BD%95%E5%AE%9A%E4%B9%89%E7%9A%84%E5%9B%9B%E7%A7%8D%E4%BA%A4%E4%BA%92%E4%BD%9C%E7%94%A8%E7%9A%84%E5%BD%A2%E6%80%81%E5%AE%9A%E4%B9%89"><span class="toc-number">1.5.1.</span> <span class="toc-text">
+          FHS目录定义的四种交互作用的形态定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%85%B1%E4%BA%AB%E7%9A%84"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">
+          可共享的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%8F%AF%E5%85%B1%E4%BA%AB%E7%9A%84"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">
+          不可共享的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%8A%A8%E7%9A%84"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">
+          不可变动的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%98%E5%8A%A8%E7%9A%84"><span class="toc-number">1.5.1.4.</span> <span class="toc-text">
+          可变动的</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.6.</span> <span class="toc-text">
+          根目录的意义</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#FHS%E6%A0%87%E5%87%86%E5%BB%BA%E8%AE%AE%EF%BC%9A"><span class="toc-number">1.6.0.0.1.</span> <span class="toc-text">
+          FHS标准建议：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%8C%85%E5%90%AB%E5%86%85%E5%AE%B9"><span class="toc-number">1.7.</span> <span class="toc-text">
+          根目录包含内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8D%E5%8F%AF%E5%88%86%E5%BC%80%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-number">1.7.1.</span> <span class="toc-text">
+          与根目录不可分开的目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x2F-var%E7%9B%AE%E5%BD%95%E7%9A%84%E6%84%8F%E4%B9%89%E4%B8%8E%E5%86%85%E5%AE%B9"><span class="toc-number">1.8.</span> <span class="toc-text">
+          &#x2F;var目录的意义与内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6"><span class="toc-number">1.9.</span> <span class="toc-text">
+          命令提示符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AB%E4%B9%89"><span class="toc-number">1.9.1.</span> <span class="toc-text">
+          含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B6%E7%9B%AE%E5%BD%95"><span class="toc-number">1.9.2.</span> <span class="toc-text">
+          什么是家目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%91%BD%E4%BB%A4%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.10.</span> <span class="toc-text">
+          Linux命令的基本格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.</span> <span class="toc-text">
+          Linux常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%85%B3%E6%9C%BA%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">1.11.1.</span> <span class="toc-text">
+          常用关机命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.2.</span> <span class="toc-text">
+          常用重启命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#init%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">1.11.3.</span> <span class="toc-text">
+          init命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95"><span class="toc-number">1.11.4.</span> <span class="toc-text">
+          用户登录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-login-%E7%99%BB%E5%BD%95"><span class="toc-number">1.11.4.1.</span> <span class="toc-text">
+          1.login 登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%94%A8%E6%88%B7%E7%99%BB%E5%87%BA%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.4.2.</span> <span class="toc-text">
+          2.用户登出命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E5%91%BD%E4%BB%A4shutdown"><span class="toc-number">1.11.5.</span> <span class="toc-text">
+          拓展命令shutdown</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#c%EF%BC%9A%E5%8F%96%E6%B6%88%E5%89%8D%E4%B8%80%E4%B8%AA%E5%85%B3%E6%9C%BA%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.5.1.</span> <span class="toc-text">
+          -c：取消前一个关机命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#h%EF%BC%9A%E5%85%B3%E6%9C%BA"><span class="toc-number">1.11.5.2.</span> <span class="toc-text">
+          -h：关机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#r%EF%BC%9A%E9%87%8D%E5%90%AF"><span class="toc-number">1.11.5.3.</span> <span class="toc-text">
+          -r：重启</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#touch%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.6.</span> <span class="toc-text">
+          touch命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm%E5%88%A0%E9%99%A4%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.7.</span> <span class="toc-text">
+          rm删除命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp%E5%A4%8D%E5%88%B6%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.8.</span> <span class="toc-text">
+          cp复制命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm%E7%A7%BB%E5%8A%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.9.</span> <span class="toc-text">
+          rm移动命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#more%E6%98%BE%E7%A4%BA%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.10.</span> <span class="toc-text">
+          more显示命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#head%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.11.</span> <span class="toc-text">
+          head查看命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tail%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.12.</span> <span class="toc-text">
+          tail查看命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4rep%E5%86%85%E5%AE%B9%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.13.</span> <span class="toc-text">
+          find查找命令rep内容查找命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grep%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.14.</span> <span class="toc-text">
+          grep命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#whereis%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.15.</span> <span class="toc-text">
+          whereis命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#which%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.16.</span> <span class="toc-text">
+          which命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar%E6%89%93%E5%8C%85%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.17.</span> <span class="toc-text">
+          tar打包命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zip%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.18.</span> <span class="toc-text">
+          zip压缩命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unzip%E6%9F%A5%E7%9C%8B%E5%92%8C%E8%A7%A3%E5%8E%8Bzip"><span class="toc-number">1.11.19.</span> <span class="toc-text">
+          unzip查看和解压zip</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM%E4%BD%BF%E7%94%A8"><span class="toc-number">1.12.</span> <span class="toc-text">
+          VIM使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">1.13.</span> <span class="toc-text">
+          用户与用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E4%B8%8E%E2%80%9C%E7%94%A8%E6%88%B7%E2%80%9D%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.13.1.</span> <span class="toc-text">
+          Linux与“用户”的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.13.2.</span> <span class="toc-text">
+          用户的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%EF%BC%9A%E6%8B%A5%E6%9C%89%E5%AF%B9%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9C%80%E9%AB%98%E7%AE%A1%E7%90%86%E6%9D%83%E9%99%90%EF%BC%8C%E9%BB%98%E8%AE%A4%E6%98%AFroot%E7%94%A8%E6%88%B7"><span class="toc-number">1.13.2.1.</span> <span class="toc-text">
+          超级用户：拥有对系统的最高管理权限，默认是root用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E7%9A%84%E7%94%A8%E6%88%B7%EF%BC%9A%E5%8F%AA%E8%83%BD%E5%AF%B9%E8%87%AA%E5%B7%B1%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE%E5%92%8C%E4%BF%AE%E6%94%B9%EF%BC%8C%E5%85%B7%E6%9C%89%E7%99%BB%E5%BD%95%E5%88%B0%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90"><span class="toc-number">1.13.2.2.</span> <span class="toc-text">
+          普通的用户：只能对自己目录下的文件进行访问和修改，具有登录到系统的权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E7%94%A8%E6%88%B7%EF%BC%9A%E4%B8%8D%E8%83%BD%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F%EF%BC%8C%E4%B8%BB%E8%A6%81%E6%98%AF%E6%96%B9%E4%BE%BF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%A6%82%EF%BC%9Abin%E3%80%81adm%E3%80%81nobody%E7%94%A8%E6%88%B7%E7%AD%89"><span class="toc-number">1.13.2.3.</span> <span class="toc-text">
+          虚拟用户：不能登录系统，主要是方便管理系统，如：bin、adm、nobody用户等</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.13.3.</span> <span class="toc-text">
+          用户和用户组的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">1.13.3.1.</span> <span class="toc-text">
+          用户组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E6%98%AF%E5%85%B7%E6%9C%89%E7%9B%B8%E5%90%8C%E7%89%B9%E5%BE%81%E7%94%A8%E6%88%B7%E7%9A%84%E9%80%BB%E8%BE%91%E9%9B%86%E5%90%88"><span class="toc-number">1.13.3.2.</span> <span class="toc-text">
+          用户组是具有相同特征用户的逻辑集合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux%E5%B0%86%E7%94%A8%E6%88%B7%E5%88%86%E7%BB%84%E6%98%AFLinux%E5%AF%B9%E7%94%A8%E6%88%B7%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E5%8F%8A%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%9D%83%E9%99%90%E7%9A%84%E4%B8%80%E7%A7%8D%E6%89%8B%E6%AE%B5%EF%BC%8C%E5%BE%88%E5%A4%A7%E7%A8%8B%E5%BA%A6%E4%B8%8A%E7%AE%80%E5%8C%96%E4%BA%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.13.3.3.</span> <span class="toc-text">
+          Linux将用户分组是Linux对用户进行管理及访问控制权限的一种手段，很大程度上简化了管理工作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.13.4.</span> <span class="toc-text">
+          用户和用户组的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E5%AF%B9%E4%B8%80"><span class="toc-number">1.13.4.1.</span> <span class="toc-text">
+          一对一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E5%AF%B9%E5%A4%9A"><span class="toc-number">1.13.4.2.</span> <span class="toc-text">
+          一对多</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%AF%B9%E4%B8%80"><span class="toc-number">1.13.4.3.</span> <span class="toc-text">
+          多对一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A"><span class="toc-number">1.13.4.4.</span> <span class="toc-text">
+          多对多</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">1.13.5.</span> <span class="toc-text">
+          相关文件的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#x2F-etc-x2F-passwd%E5%AD%98%E5%82%A8%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%89%80%E6%9C%89%E7%94%A8%E6%88%B7%E7%9A%84%E4%BF%A1%E6%81%AF%EF%BC%88%E5%AF%86%E7%A0%81%E9%99%A4%E5%A4%96%EF%BC%89"><span class="toc-number">1.13.5.1.</span> <span class="toc-text">
+          &#x2F;etc&#x2F;passwd存储当前系统中所有用户的信息（密码除外）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x2F-etc-x2F-shadow%E5%AD%98%E5%82%A8%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%89%80%E6%9C%89%E7%94%A8%E6%88%B7%E7%9A%84%E5%AF%86%E7%A0%81%E4%BF%A1%E6%81%AF"><span class="toc-number">1.13.5.2.</span> <span class="toc-text">
+          &#x2F;etc&#x2F;shadow存储当前系统中所有用户的密码信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x2F-etc-x2F-group%E5%AD%98%E5%82%A8%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%89%80%E6%9C%89%E7%94%A8%E6%88%B7%E7%BB%84%E4%BF%A1%E6%81%AF"><span class="toc-number">1.13.5.3.</span> <span class="toc-text">
+          &#x2F;etc&#x2F;group存储当前系统中所有用户组信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x2F-etc-x2F-gshadow%E5%AD%98%E5%82%A8%E7%94%A8%E6%88%B7%E7%BB%84%E5%AF%86%E7%A0%81%E7%9A%84%E4%B8%80%E7%B1%BB%E4%BF%A1%E6%81%AF"><span class="toc-number">1.13.5.4.</span> <span class="toc-text">
+          &#x2F;etc&#x2F;gshadow存储用户组密码的一类信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%81%94%E7%B3%BB"><span class="toc-number">1.13.5.5.</span> <span class="toc-text">
+          从相关文件分析用户和组之间的联系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-number">1.13.6.</span> <span class="toc-text">
+          相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%91%BD%E4%BB%A4"><span class="toc-number">1.13.6.1.</span> <span class="toc-text">
+          用户命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="toc-number">1.13.6.2.</span> <span class="toc-text">
+          修改密码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-number">1.13.6.3.</span> <span class="toc-text">
+          用户管理其他命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6"><span class="toc-number">1.14.</span> <span class="toc-text">
+          Linux权限控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">1.14.1.</span> <span class="toc-text">
+          文件权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="toc-number">1.14.1.1.</span> <span class="toc-text">
+          注意：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%9D%83%E9%99%90%E5%90%AB%E4%B9%89%E5%92%8C%E4%BD%9C%E7%94%A8%E4%B8%8D%E5%90%8C"><span class="toc-number">1.14.1.2.</span> <span class="toc-text">
+          文件和目录权限含义和作用不同</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%92%88%E5%AF%B9%E6%96%87%E4%BB%B6"><span class="toc-number">1.14.1.2.1.</span> <span class="toc-text">
+          针对文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%92%88%E5%AF%B9%E7%9B%AE%E5%BD%95"><span class="toc-number">1.14.1.2.2.</span> <span class="toc-text">
+          针对目录</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E3%80%81%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E6%9D%83%E9%99%90"><span class="toc-number">1.14.2.</span> <span class="toc-text">
+          显示、设置文件的默认权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-number">1.14.2.1.</span> <span class="toc-text">
+          参数说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-number">1.14.2.2.</span> <span class="toc-text">
+          命令说明：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript"><span class="toc-number">1.15.</span> <span class="toc-text">
+          JavaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript%E8%BE%93%E5%87%BA"><span class="toc-number">1.15.1.</span> <span class="toc-text">
+          JavaScript输出</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9CHTML%E5%85%83%E7%B4%A0"><span class="toc-number">1.15.1.1.</span> <span class="toc-text">
+          操作HTML元素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BF%E9%97%AEHTML%E5%85%83%E7%B4%A0"><span class="toc-number">1.15.1.1.1.</span> <span class="toc-text">
+          访问HTML元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80"><span class="toc-number">1.15.2.</span> <span class="toc-text">
+          JavaScript语言基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E-amp-%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.15.2.1.</span> <span class="toc-text">
+          变量的声明&amp;初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="toc-number">1.15.2.1.1.</span> <span class="toc-text">
+          变量的声明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript%E7%9A%84%E5%86%85%E9%83%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.15.3.</span> <span class="toc-text">
+          JavaScript的内部对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Date%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.15.3.1.</span> <span class="toc-text">
+          Date对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.15.3.2.</span> <span class="toc-text">
+          String对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.15.3.2.1.</span> <span class="toc-text">
+          创建字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="toc-number">1.15.3.2.2.</span> <span class="toc-text">
+          常用的字符串方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript%E6%95%B0%E7%BB%84"><span class="toc-number">1.15.3.3.</span> <span class="toc-text">
+          JavaScript数组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E8%B5%8B%E5%80%BC"><span class="toc-number">1.15.3.3.1.</span> <span class="toc-text">
+          数组赋值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.15.3.3.2.</span> <span class="toc-text">
+          数组中的常用方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-DOM%E6%93%8D%E4%BD%9C"><span class="toc-number">1.15.4.</span> <span class="toc-text">
+          JavaScript DOM操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E7%9A%84%E8%AE%BF%E9%97%AE"><span class="toc-number">1.15.4.1.</span> <span class="toc-text">
+          节点的访问</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.15.5.</span> <span class="toc-text">
+          JavaScript事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.15.5.1.</span> <span class="toc-text">
+          常用的事件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%9F%BA%E7%A1%80"><span class="toc-number">1.16.</span> <span class="toc-text">
+          PHP基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E6%A6%82%E8%BF%B0"><span class="toc-number">1.16.1.</span> <span class="toc-text">
+          PHP概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">1.16.1.1.</span> <span class="toc-text">
+          注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.16.1.2.</span> <span class="toc-text">
+          变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E8%A7%84%E5%88%99"><span class="toc-number">1.16.1.3.</span> <span class="toc-text">
+          变量规则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.16.2.</span> <span class="toc-text">
+          PHP数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.16.2.1.</span> <span class="toc-text">
+          字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E3%80%81%E6%B5%AE%E7%82%B9%E6%95%B0%E3%80%81%E5%B8%83%E5%B0%94%E5%9E%8B%E3%80%81NULL%E5%80%BC"><span class="toc-number">1.16.2.2.</span> <span class="toc-text">
+          整数、浮点数、布尔型、NULL值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.16.2.3.</span> <span class="toc-text">
+          运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.16.2.4.</span> <span class="toc-text">
+          数组的基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="toc-number">1.16.2.4.1.</span> <span class="toc-text">
+          数组排序</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP%E6%A0%87%E5%87%86%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">1.16.2.5.</span> <span class="toc-text">
+          PHP标准函数库</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">1.16.2.5.0.1.</span> <span class="toc-text">
+          变量函数库</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-number">1.16.2.5.0.2.</span> <span class="toc-text">
+          字符串函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.16.2.6.</span> <span class="toc-text">
+          PHP类和对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PHP%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.16.2.6.1.</span> <span class="toc-text">
+          PHP对象</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%B9%E8%B1%A1-construct%EF%BC%88%EF%BC%89"><span class="toc-number">1.16.2.6.1.1.</span> <span class="toc-text">
+          初始化对象_construct（）{}</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0-destruct"><span class="toc-number">1.16.2.6.1.2.</span> <span class="toc-text">
+          析构函数_destruct(){}</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86"><span class="toc-number">1.16.3.</span> <span class="toc-text">
+          PHP表单处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%B1%9E%E6%80%A7"><span class="toc-number">1.16.3.1.</span> <span class="toc-text">
+          表单属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie"><span class="toc-number">1.16.4.</span> <span class="toc-text">
+          Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session"><span class="toc-number">1.16.5.</span> <span class="toc-text">
+          Session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie%E4%B8%8ESession%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.16.6.</span> <span class="toc-text">
+          Cookie与Session的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySql"><span class="toc-number">1.17.</span> <span class="toc-text">
+          MySql</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mysql%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8"><span class="toc-number">1.17.1.</span> <span class="toc-text">
+          Mysql命令使用</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.png" alt="avatar"></div><p class="sidebar-ov-author__text">世间本浑浊，罪与爱同歌</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">35</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Sanyer</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
